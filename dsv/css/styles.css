@@ -65,3 +65,21 @@ footer {
 .list-unstyled a:hover{
 	color:#7EA37E;
 }
+
+.nav li a:hover{
+	background-color:#7EA37E;
+}
+
+.nav li a{
+	color:#444;
+}
+
+.nav a i2{
+	color:#FC0;
+}
+
+/* color menu direito */
+
+.thumbnail a{
+	border-width:0px;
+}
