@@ -105,7 +105,7 @@
       
       	<hr>
         
-        <div class="row">
+        <!--<div class="row">
           <div class="col-xs-6 col-md-3">
             <a href="#" class="thumbnail">
               <img data-src="holder.js/100%x180" alt="...">
@@ -148,14 +148,39 @@
               <img data-src="holder.js/100%x180" alt="...">
             </a>
           </div>
-        </div>
+        </div>-->
         
         <div class="panel panel-default">
           <div class="panel-body">	
-            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive">cat</div></a>
-            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive">cat</div></a>
-            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">cat</div></a>
-            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">cat</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias</div></a>
+            </br>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias</div></a>
+            </br>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias</div></a>
+            </br>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias</div></a>
+            </br>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias</div></a>
+            </br>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias</div></a>
           </div>
        </div>
        
