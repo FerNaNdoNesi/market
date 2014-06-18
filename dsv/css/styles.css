@@ -66,8 +66,8 @@ footer {
 	color:#7EA37E;
 }
 
-.nav li a:hover{
-	background-color:#7EA37E;
+.nav li a:hover{/*fundo menu (LISTAR PO:)*/
+	/*background-color:#7EA37E;*/
 }
 
 .nav li a{
@@ -79,7 +79,23 @@ footer {
 }
 
 /* color menu direito */
+.panel-body a{
+	color:#666;
+	font-variant:small-caps;
+	font-size:16px;
+}
+.panel-body a:hover{
+	font-weight:bold;
+}
 
-.thumbnail a{
-	border-width:0px;
+.img-circle{
+	height:75px;
+}
+
+.col-xs-3:hover .img-circle{
+	box-shadow: -1px -1px 1px #666;
+	-webkit-box-shadow: -1px -1px 1px #666;
+	-moz-box-shadow: -1px -1px 1px #666;
+	/*background-image: linear-gradient(to bottom, #FFFFFF, #F0F0F0);
+	border-radius:10px;*/
 }

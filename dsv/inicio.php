@@ -84,7 +84,7 @@
            
       <hr>
       
-      <strong><i class="glyphicon glyphicon-sort-by-attributes"></i> LISTAR POR:</strong>  
+      <strong><i class="glyphicon glyphicon-sort-by-attributes"></i> VER ANÚNCIOS:</strong>  
       
       <hr>
       
@@ -152,15 +152,15 @@
         
         <div class="panel panel-default">
           <div class="panel-body">	
-            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive">categorias</div></a>
-            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive">categorias</div></a>
-            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias</div></a>
-            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="img/categorias/imóveis.png" class="img-circle img-responsive">imóveis</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="img/categorias/informatica.png" class="img-circle img-responsive">informática</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="img/categorias/jogos.png" class="img-circle img-responsive">jogos</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="img/categorias/telefonia.png" class="img-circle img-responsive">telefonia</div></a>
             </br>
-            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive">categorias</div></a>
-            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive">categorias</div></a>
-            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias</div></a>
-            <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="img/categorias/eletronicos.png" class="img-circle img-responsive">eletrônicos</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="img/categorias/moveis.png" class="img-circle img-responsive">móveis</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="img/categorias/esporte.png" class="img-circle img-responsive">esporte</div></a>
+            <a href="#"><div class="col-xs-3 text-center"><img src="img/categorias/veiculos.png" class="img-circle img-responsive">veiculos</div></a>
             </br>
             <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive">categorias</div></a>
             <a href="#"><div class="col-xs-3 text-center"><img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive">categorias</div></a>
