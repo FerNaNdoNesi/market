@@ -57,17 +57,26 @@ footer {
 	text-shadow:inherit;
 }
 
+.navbar-brand .glyphicon{
+	font-size:18px;
+}
+
 /* color menu esquerdo*/
 .list-unstyled a{
 	color:#666;
+	/*font-variant:small-caps;*/
 }
 
 .list-unstyled a:hover{
 	color:#7EA37E;
 }
 
-.nav li a:hover{/*fundo menu (LISTAR PO:)*/
-	/*background-color:#7EA37E;*/
+.list-unstyled a:hover .badge{
+	background-color:#7EA37E;
+}
+
+.nav li a:hover i3{/*hover menu (LISTAR PO:)*/
+	font-weight:bold;
 }
 
 .nav li a{
@@ -76,6 +85,10 @@ footer {
 
 .nav a i2{
 	color:#FC0;
+}
+
+i3{
+	font-variant:small-caps;
 }
 
 /* color menu direito */
@@ -93,9 +106,43 @@ footer {
 }
 
 .col-xs-3:hover .img-circle{
-	box-shadow: -1px -1px 1px #666;
-	-webkit-box-shadow: -1px -1px 1px #666;
-	-moz-box-shadow: -1px -1px 1px #666;
+	box-shadow: -1px -1px 5px #666;
+	-webkit-box-shadow: -1px -1px 5px #666;
+	-moz-box-shadow: -1px -1px 5px #666;
 	/*background-image: linear-gradient(to bottom, #FFFFFF, #F0F0F0);
 	border-radius:10px;*/
+}
+
+.thumbnail:hover{
+	border-width:0px;
+	box-shadow: -1px -1px 10px #666;
+	-webkit-box-shadow: -1px -1px 10px #666;
+	-moz-box-shadow: -1px -1px 10px #666;
+}
+
+/* estilo lista de anúncios*/
+
+.list-group-item{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.list-group-item:hover{
+	border-width:0px;
+	box-shadow: -5px -2px 15px #666;
+	-webkit-box-shadow: -5px -2px 15px #666;
+	-moz-box-shadow: -5px -2px 15px #666;
+}
+
+
+/*estilo inicio / categoria / subCategoria*/
+.breadcrumb li a{
+	color:#444;	
+}
+
+.breadcrumb li a:hover{
+	color:#666;	
 }
