@@ -1,12 +1,13 @@
 <?php
+	require_once dirname (__FILE__)."/biblioteca/biblioteca.php";
 	session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"> <!-- charset=utf-8">-->
 		<meta charset="utf-8">
-		<title>Mercado Chapecó</title>
+		<title>Mercado Chapec&oacute;</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		
@@ -18,22 +19,22 @@
     <div id="top-nav" class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="index.php">
               <i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i>
-              <i3><strong>M</strong>ercado<strong>Chapecó</strong></i3>
+              <i3><strong>M</strong>ercado<strong>Chapec&oacute;</strong></i3>
               <i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i>
           </a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><i class="glyphicon glyphicon-plus"></i> Criar Anúncio</a></li>
+            <li><a href="#"><i class="glyphicon glyphicon-plus"></i> Criar An&uacute;ncio</a></li>
             <li class="dropdown">
               <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
                 <i class="glyphicon glyphicon-user"></i> FerNaNdoNesi <span class="caret"></span>
               </a>
               <ul id="g-account-menu" class="dropdown-menu" role="menu">
                 <li><a href="#">Painel de controle</a></li>
-                <li><a href="#">Meus anúncios</a></li>
+                <li><a href="#">Meus an&uacute;ncios</a></li>
                 <li><a href="#">Sair</a></li>
               </ul>
             </li>
@@ -48,10 +49,10 @@
         <div class="row">
             <div class="col-md-3">
               <!-- Left column -->
-              <strong><i class="glyphicon glyphicon-sort-by-attributes-alt"></i> CATEGORIAS </strong>      
+              <strong><i class="glyphicon glyphicon-sort-by-attributes-alt"></i> CATEGORIAS </strong> 
               <hr>      
               <ul class="list-unstyled">
-                <li class="nav-header">
+                <!--<li class="nav-header">
                     <a data-toggle="collapse" data-target="#userMenu">
                         <h5>Categorias mais visitadas<i class="glyphicon glyphicon-chevron-down"></i></h5>
                     </a>
@@ -60,42 +61,28 @@
                         <li><a href="#"> Messages <span class="badge badge-info">3</span></a></li>
                         <li><a href="#"> Options <span class="badge badge-info">47</span></a></li>
                         <li><a href="#"> Shoutbox <span class="badge badge-info">4</span></a></li>
-                        <li><a href="#"> Acessórios automotivos <span class="badge badge-info">5</span></a></li>
-                        <li><a href="#"> Som e acessórios automotivos <span class="badge badge-info">10</span></a></li>
+                        <li><a href="#"> Acess�rios automotivos <span class="badge badge-info">5</span></a></li>
+                        <li><a href="#"> Som e acess�rios automotivos <span class="badge badge-info">10</span></a></li>
                         <li><a href="#"> Rules <span class="badge badge-info">120</span></a></li>
                         <li><a href="#"> Logout <span class="badge badge-info">45</span></a></li>
                     </ul>
-                </li>
+                </li>-->
                 <?php
-                for($i = 0; $i<35; $i++){
-                    echo"<li class='nav-header'>";
-                    echo"	<a data-toggle='collapse' data-target='#categoria".$i."'>";
-                    echo"   	<h5>Categoria ".$i." <i class='glyphicon glyphicon-chevron-right'></i></h5>";
-                    echo"   </a>";
-                    echo"   <ul class='list-unstyled collapse' id='categoria".$i."'>";
-                    echo"   	<li>";
-                    echo"			<a href='#'> Facebook <span class='badge badge-info'>".$i."</span></a>";
-                    echo"		</li>";
-                    echo"       <li>";
-                    echo"			<a href='#'> Twitter <span class='badge badge-info'>".$i."</span></a>";
-                    echo"		</li>";
-                    echo"    </ul>";
-                    echo"</li>";
-                }
+					listaTodasSubCategorias(0);                
                 ?>
               </ul>
                    
               <hr>
               
-              <strong><i class="glyphicon glyphicon-sort-by-attributes"></i> VER ANÚNCIOS:</strong>  
+              <strong><i class="glyphicon glyphicon-sort-by-attributes"></i> VER AN&Uacute;NCIOS:</strong>  
               
               <hr>
               
               <ul class="nav nav-pills nav-stacked">
                 <li><a href="#"><i2 class="glyphicon glyphicon-star"></i2><i3> Mais visitados </i3></a></li>
-                <li><a href="#"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Melhores anúncios </i3></a></li>
+                <li><a href="#"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Melhores an&uacute;ncios </i3></a></li>
                 <li><a href="#"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Eventos </i3></a></li>
-                <li><a href="#"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Promoções </i3></a></li>
+                <li><a href="#"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Promo&ccedil;&otilde;es </i3></a></li>
               </ul>
               
               <hr>
@@ -106,7 +93,7 @@
             <div class="col-md-9">
                 <div class="row">
                     <div class="col-md-6">
-                        <strong><i class="glyphicon glyphicon-usd"></i> PROMOÇŌES </strong>
+                        <strong><i class="glyphicon glyphicon-usd"></i> PROMO��ES </strong>
                         <hr>
                         <?php 
 						for($i = 0; $i<1; $i++){
@@ -121,7 +108,7 @@
 							echo"</div>";
 						}
 						?>
-                    </div><!-- /col-md-6 PROMOÇŌES -->
+                    </div><!-- /col-md-6 PROMO�?ES -->
                     <div class="col-md-6">
                         <strong><i class="glyphicon glyphicon-glass"></i> EVENTOS </strong>  
                         <hr>
@@ -146,101 +133,101 @@
                 
                 <div class="panel panel-default">
                   <div class="panel-body">	
-                    <a href="#">
+                    <a href="classificados.php">
                     	<div class="col-xs-3 text-center">
-                        	<img src="img/categorias/imóveis.png" class="img-circle img-responsive">imóveis
+                        	<img src="img/categorias/im�veis.png" class="img-circle img-responsive">im&oacute;veis
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="classificados.php">
                         <div class="col-xs-3 text-center">
-	                        <img src="img/categorias/informatica.png" class="img-circle img-responsive">informática
+	                        <img src="img/categorias/informatica.png" class="img-circle img-responsive">inform&aacute;tica
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="classificados.php">
                         <div class="col-xs-3 text-center">
                         	<img src="img/categorias/jogos.png" class="img-circle img-responsive">jogos
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="classificados.php">
                         <div class="col-xs-3 text-center">
                         	<img src="img/categorias/telefonia.png" class="img-circle img-responsive">telefonia
                         </div>
                     </a>
                     </br>
-                    <a href="#">
+                    <a href="classificados.php">
                         <div class="col-xs-3 text-center">
-                        	<img src="img/categorias/eletronicos.png" class="img-circle img-responsive">eletrônicos
+                        	<img src="img/categorias/eletronicos.png" class="img-circle img-responsive">eletr&ocirc;nicos
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="classificados.php">
                         <div class="col-xs-3 text-center">
-                        	<img src="img/categorias/moveis.png" class="img-circle img-responsive">móveis
+                        	<img src="img/categorias/moveis.png" class="img-circle img-responsive">m&oacute;veis
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="classificados.php">
                         <div class="col-xs-3 text-center">
                         	<img src="img/categorias/esporte.png" class="img-circle img-responsive">esporte
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="classificados.php">
                         <div class="col-xs-3 text-center">
                         	<img src="img/categorias/veiculos.png" class="img-circle img-responsive">veiculos
                         </div>
                     </a>
                     </br>
-                    <a href="#">
+                    <a href="classificados.php">
                     	<div class="col-xs-3 text-center">
                         	<img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive">categorias
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="classificados.php">
                     	<div class="col-xs-3 text-center">
                         	<img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive">categorias
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="classificados.php">
                     	<div class="col-xs-3 text-center">
                         	<img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="classificados.php">
                     	<div class="col-xs-3 text-center">
                         	<img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias
                         </div>
                     </a>
                     </br>
-                    <a href="#">
+                    <a href="classificados.php">
                     	<div class="col-xs-3 text-center">
                         	<img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive">categorias
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="classificados.php">
                     	<div class="col-xs-3 text-center">
                         	<img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive">categorias
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="classificados.php">
                     	<div class="col-xs-3 text-center">
                         	<img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="classificados.php">
                     	<div class="col-xs-3 text-center">
                         	<img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias
                         </div>
                     </a>
                     </br>
-                    <a href="#">
+                    <a href="classificados.php">
                     	<div class="col-xs-3 text-center">
                         	<img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive">categorias
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="classificados.php">
                     	<div class="col-xs-3 text-center">
                         	<img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive">categorias
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="classificados.php">
                     	<div class="col-xs-3 text-center">
                         	<img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias
                         </div>
@@ -274,7 +261,7 @@
                   </div>
                </div>
               
-               <strong><i class="glyphicon glyphicon-tasks"></i> ULTIMOS ANÚNCIOS </strong>
+               <strong><i class="glyphicon glyphicon-tasks"></i> ULTIMOS AN&Uacute;NCIOS </strong>
                <hr>
                             
                 <div class='row'>
@@ -292,7 +279,7 @@
                         <i3>Visitas</i3>
                     </div>
                     <div class='col-md-2 text-center'>
-                        <i3>Anúnciado</i3>
+                        <i3>An&uacute;nciado</i3>
                     </div>
                     <strong>
                 </div>
@@ -300,13 +287,13 @@
 				<?php
 				$color = 0;
 			  for($i = 0; $i <21; $i++){
-				echo"<a href='#' class='list-group-item'>";
+				echo"<a href='anuncio.php' class='list-group-item'>";
               	echo"<div class='row'>";
 				echo"	<div class='col-md-2'>";
 				echo"		<img class='media-object' src='img/555.gif' width='100px' alt='...'>";
 				echo"	</div>";
 				echo"	<div class='col-md-5'>";
-				echo"		<h4><i3>Anúncio com um nome maior que o normal e totalizando ".$i."</i3></h4>";
+				echo"		<h4><i3>An�ncio com um nome maior que o normal e totalizando ".$i."</i3></h4>";
 				echo"	</div>";
 				echo"	<div class='col-md-2 text-right'>";
 				echo"		<h6><i3>R$ ".$i."00.100,90</i3></h6>";
@@ -330,7 +317,7 @@
 	<!-- Rodape -->
 	<footer class="text-center">
 		<i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i>
-        <i3><strong>M</strong>ercado<strong>Chapecó</strong></i3>
+        <i3><strong>M</strong>ercado<strong>Chapec&oacute;</strong></i3>
         <i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i>	
     </footer>
     <!-- /Rodape -->
