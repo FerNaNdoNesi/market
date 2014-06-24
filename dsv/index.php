@@ -1,5 +1,5 @@
 <?php
-	require_once dirname (__FILE__)."/biblioteca/biblioteca.php";
+	require_once dirname (__FILE__)."/library/library.php";
 	session_start();
 ?>
 <!DOCTYPE html>
@@ -7,7 +7,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"> <!-- charset=utf-8">-->
 		<meta charset="utf-8">
-		<title>Mercado Chapec&oacute;</title>
+		<title>Mercado Laranjeiras</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		
@@ -21,7 +21,7 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="index.php">
               <i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i>
-              <i3><strong>M</strong>ercado<strong>Chapec&oacute;</strong></i3>
+              <i3><strong>M</strong>ercado<strong>Laranjeiras</strong></i3>
               <i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i>
           </a>
         </div>
@@ -68,7 +68,7 @@
                     </ul>
                 </li>-->
                 <?php
-					listaTodasSubCategorias(0);                
+					listaMenuCategorias(0);                
                 ?>
               </ul>
                    
@@ -133,7 +133,10 @@
                 
                 <div class="panel panel-default">
                   <div class="panel-body">	
-                    <a href="classificados.php">
+                  <?php
+				  	mostraCategorias(0);
+				  ?>
+                    <!--<a href="classificados.php">
                     	<div class="col-xs-3 text-center">
                         	<img src="img/categorias/imóveis.png" class="img-circle img-responsive">im&oacute;veis
                         </div>
@@ -257,7 +260,7 @@
                     	<div class="col-xs-3 text-center">
                         	<img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias
                         </div>
-                    </a>
+                    </a>-->
                   </div>
                </div>
               
@@ -287,7 +290,7 @@
 				<?php
 				$color = 0;
 			  for($i = 0; $i <21; $i++){
-				echo"<a href='anuncio.php' class='list-group-item'>";
+				echo"<a href='anuncio.php?cat=1&scat=1' class='list-group-item'>";
               	echo"<div class='row'>";
 				echo"	<div class='col-md-2'>";
 				echo"		<img class='media-object' src='img/555.gif' width='100px' alt='...'>";
@@ -317,7 +320,7 @@
 	<!-- Rodape -->
 	<footer class="text-center">
 		<i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i>
-        <i3><strong>M</strong>ercado<strong>Chapec&oacute;</strong></i3>
+        <i3><strong>M</strong>ercado<strong>Laranjeiras</strong></i3>
         <i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i>	
     </footer>
     <!-- /Rodape -->

@@ -1,5 +1,5 @@
 <?php
-	require_once dirname (__FILE__)."/biblioteca/biblioteca.php";
+	require_once dirname (__FILE__)."/library/library.php";
 	session_start();
 ?>
 <!DOCTYPE html>
@@ -7,7 +7,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"> <!-- charset=utf-8">-->
 		<meta charset="utf-8">
-		<title>An&uacute;ncio</title>
+		<title>Anúncio</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		
@@ -21,7 +21,7 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="index.php">
               <i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i>
-              <i3><strong>M</strong>ercado<strong>Chapec&oacute;</strong></i3>
+              <i3><strong>M</strong>ercado<strong>Laranjeiras</strong></i3>
               <i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i>
           </a>
         </div>
@@ -52,37 +52,11 @@
               <strong><i class="glyphicon glyphicon-sort-by-attributes-alt"></i> SUB CATEGORIAS </strong>      
               <hr>      
               <ul class="list-unstyled">
-                <li class="nav-header">
-                    <a data-toggle="collapse" data-target="#userMenu">
-                        <h5>Categorias mais visitadas<i class="glyphicon glyphicon-chevron-down"></i></h5>
-                    </a>
-                    <ul class="list-unstyled collapse in" id="userMenu">
-                        <li><a href="#"> Home <span class="badge badge-info">96</span></a></li>
-                        <li><a href="#"> Messages <span class="badge badge-info">3</span></a></li>
-                        <li><a href="#"> Options <span class="badge badge-info">47</span></a></li>
-                        <li><a href="#"> Shoutbox <span class="badge badge-info">4</span></a></li>
-                        <li><a href="#"> Acess&oacute;rios automotivos <span class="badge badge-info">5</span></a></li>
-                        <li><a href="#"> Som e acess&oacute;rios automotivos <span class="badge badge-info">10</span></a></li>
-                        <li><a href="#"> Rules <span class="badge badge-info">120</span></a></li>
-                        <li><a href="#"> Logout <span class="badge badge-info">45</span></a></li>
-                    </ul>
-                </li>
-                <?php
-                for($i = 0; $i<35; $i++){
-                    echo"<li class='nav-header'>";
-                    echo"	<a data-toggle='collapse' data-target='#categoria".$i."'>";
-                    echo"   	<h5>Categoria ".$i." <i class='glyphicon glyphicon-chevron-right'></i></h5>";
-                    echo"   </a>";
-                    echo"   <ul class='list-unstyled collapse' id='categoria".$i."'>";
-                    echo"   	<li>";
-                    echo"			<a href='#'> Facebook <span class='badge badge-info'>".$i."</span></a>";
-                    echo"		</li>";
-                    echo"       <li>";
-                    echo"			<a href='#'> Twitter <span class='badge badge-info'>".$i."</span></a>";
-                    echo"		</li>";
-                    echo"    </ul>";
-                    echo"</li>";
-                }
+              	<?php
+					if(isset($_GET['cat']))
+					listaMenuCategorias($_GET['cat']); 
+					else
+					listaMenuCategorias(0);                
                 ?>
               </ul>
                    
@@ -111,8 +85,8 @@
               			<hr>
                         <ol class="breadcrumb">
                           <li><a href="index.php"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
-                          <li><a href="classificados.php">Categoria</a></li>
-                          <li><a href="classificados.php">SubCategoria</a></li>
+                          <?php if(isset($_GET['cat']))breadcrumbCategoria($_GET['cat']); ?>
+                          <?php if(isset($_GET['scat']))breadcrumbSubCategoria($_GET['cat'], $_GET['scat']); ?>
                           <li class="active">An&uacute;ncio</li>
                         </ol>
                     </div><!-- /col-md-12 -->
@@ -145,7 +119,7 @@
 	<!-- Rodape -->
 	<footer class="text-center">
 		<i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i>
-        <i3><strong>M</strong>ercado<strong>Chapec&oacute;</strong></i3>
+        <i3><strong>M</strong>ercado<strong>Laranjeiras</strong></i3>
         <i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i>	
     </footer>
     <!-- /Rodape -->

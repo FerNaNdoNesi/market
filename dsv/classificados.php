@@ -1,5 +1,5 @@
 <?php
-	require_once dirname (__FILE__)."/biblioteca/biblioteca.php";
+	require_once dirname (__FILE__)."/library/library.php";
 	session_start();	
 ?>
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="index.php">
               <i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i>
-              <i3><strong>M</strong>ercado<strong>Chapec&oacute;</strong></i3>
+              <i3><strong>M</strong>ercado<strong>Laranjeiras</strong></i3>
               <i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i>
           </a>
         </div>
@@ -49,11 +49,14 @@
         <div class="row">
             <div class="col-md-3">
               <!-- Left column -->
-              <strong><i class="glyphicon glyphicon-sort-by-attributes-alt"></i> SUB CATEGORIAS </strong>      
+              <strong><i class="glyphicon glyphicon-sort-by-attributes-alt"></i> CATEGORIA </strong>      
               <hr>      
               <ul class="list-unstyled">                
                 <?php
-					listaTodasSubCategorias(8);                
+					if(isset($_GET['cat']))
+					listaMenuCategorias($_GET['cat']); 
+					else
+					listaMenuCategorias(0);                
                 ?>
               </ul>
                    
@@ -82,8 +85,8 @@
               			<hr>
                         <ol class="breadcrumb">
                           <li><a href="index.php"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
-                          <li><a href="#">Categoria</a></li>
-                          <li class="active">SubCategoria</li>
+                          <?php if(isset($_GET['cat']))breadcrumbCategoria($_GET['cat']); ?>
+                          <?php if(isset($_GET['scat']))breadcrumbSubCategoria($_GET['cat'], $_GET['scat']); ?>
                         </ol>
                     </div><!-- /col-md-12 -->
                 </div><!-- /row -->                                           
@@ -111,7 +114,7 @@
 				<?php
 				$color = 0;
 			  for($i = 0; $i <21; $i++){
-				echo"<a href='anuncio.php' class='list-group-item'>";
+				echo"<a href='anuncio.php?cat=1&scat=1' class='list-group-item'>";
               	echo"<div class='row'>";
 				echo"	<div class='col-md-2'>";
 				echo"		<img class='media-object' src='img/555.gif' width='100px' alt='...'>";
@@ -141,7 +144,7 @@
 	<!-- Rodape -->
 	<footer class="text-center">
 		<i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i>
-        <i3><strong>M</strong>ercado<strong>Chapec&oacute;</strong></i3>
+        <i3><strong>M</strong>ercado<strong>Laranjeiras</strong></i3>
         <i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i><i class="glyphicon glyphicon-barcode"></i>	
     </footer>
     <!-- /Rodape -->
