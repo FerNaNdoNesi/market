@@ -6,7 +6,7 @@
 <html lang="pt-br">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"> <!-- charset=utf-8">-->
-		<meta charset="utf-8">
+		<meta charset="utf-8"> <!-- charset="iso-8859-">-->
 		<title>Mercado Laranjeiras</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -61,8 +61,8 @@
                         <li><a href="#"> Messages <span class="badge badge-info">3</span></a></li>
                         <li><a href="#"> Options <span class="badge badge-info">47</span></a></li>
                         <li><a href="#"> Shoutbox <span class="badge badge-info">4</span></a></li>
-                        <li><a href="#"> Acessórios automotivos <span class="badge badge-info">5</span></a></li>
-                        <li><a href="#"> Som e acessórios automotivos <span class="badge badge-info">10</span></a></li>
+                        <li><a href="#"> Acessï¿½rios automotivos <span class="badge badge-info">5</span></a></li>
+                        <li><a href="#"> Som e acessï¿½rios automotivos <span class="badge badge-info">10</span></a></li>
                         <li><a href="#"> Rules <span class="badge badge-info">120</span></a></li>
                         <li><a href="#"> Logout <span class="badge badge-info">45</span></a></li>
                     </ul>
@@ -93,7 +93,7 @@
             <div class="col-md-9">
                 <div class="row">
                     <div class="col-md-6">
-                        <strong><i class="glyphicon glyphicon-usd"></i> PROMOÇÕES </strong>
+                        <strong><i class="glyphicon glyphicon-usd"></i> PROMOï¿½ï¿½ES </strong>
                         <hr>
                         <?php 
 						for($i = 0; $i<1; $i++){
@@ -108,7 +108,7 @@
 							echo"</div>";
 						}
 						?>
-                    </div><!-- /col-md-6 PROMOÇ?ES -->
+                    </div><!-- /col-md-6 PROMOï¿½?ES -->
                     <div class="col-md-6">
                         <strong><i class="glyphicon glyphicon-glass"></i> EVENTOS </strong>  
                         <hr>

@@ -6,7 +6,7 @@
 <html lang="pt-br">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"> <!-- charset=utf-8">-->
-		<meta charset="utf-8">
+		<meta charset="utf-8"> <!-- charset="iso-8859-">-->
 		<title>Classificados</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -120,7 +120,7 @@
 				echo"		<img class='media-object' src='img/555.gif' width='100px' alt='...'>";
 				echo"	</div>";
 				echo"	<div class='col-md-5'>";
-				echo"		<h4><i3>Anúncio com um nome maior que o normal e totalizando ".$i."</i3></h4>";
+				echo"		<h4><i3>Anï¿½ncio com um nome maior que o normal e totalizando ".$i."</i3></h4>";
 				echo"	</div>";
 				echo"	<div class='col-md-2 text-right'>";
 				echo"		<h6><i3>R$ ".$i."00.100,90</i3></h6>";

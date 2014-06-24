@@ -6,8 +6,8 @@
 <html lang="pt-br">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"> <!-- charset=utf-8">-->
-		<meta charset="utf-8">
-		<title>Anúncio</title>
+		<meta charset="utf-8"> <!-- charset="iso-8859-">-->
+		<title>Anï¿½ncio</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		
