@@ -81,18 +81,18 @@
             <div class="col-md-9">
                 <div class="row">
                     <div class="col-md-12">
-                    	<strong><i class="glyphicon glyphicon-th-list"></i> AN&Uacute;NCIOS </strong>
+                    	<strong><i class="glyphicon glyphicon-th-list"></i> AN&Uacute;NCIO </strong>
               			<hr>
                         <ol class="breadcrumb">
                           <li><a href="index.php"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
                           <?php if(isset($_GET['c']))breadcrumbCategoria($_GET['c']); ?>
                           <?php if(isset($_GET['s']))breadcrumbSubCategoria($_GET['c'], $_GET['s']); ?>
-                          <li class="active">An&uacute;ncio</li>
+                          <?php if(isset($_GET['a']))breadcrumbAnuncio($_GET['a']); ?>
                         </ol>
                     </div><!-- /col-md-12 -->
                 </div><!-- /row -->
                 <?php
-					selectAnuncio($_GET['a']);
+					verAnuncio($_GET['a']);
 				?>      
               
             </div><!--/col-span-9 -->
