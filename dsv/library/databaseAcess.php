@@ -9,6 +9,7 @@
 		$resultado = mysql_query($sql);		
 		return $resultado;
 	}	
+	
 	function selectSubCategoria($id, $id2){
 		$sql = "SELECT DISTINCT c.idCategoria, s.idSubCategoria, c.tituloCategoria, s.tituloSubCategoria
 		        FROM categoria  c
@@ -16,6 +17,33 @@
 				WHERE (c.idCategoria = ".$id." OR ".$id." = 0)
 				AND (s.idSubCategoria = ".$id2." OR ".$id2." = 0)
 				ORDER BY c.tituloCategoria, s.tituloSubCategoria";				
+		$resultado = mysql_query($sql);		
+		return $resultado;
+	}
+	
+	function selectUltimosAnuncios($qtd){
+		$sql = "SELECT *, DATE_FORMAT(dtInicioAnuncio,'%d-%b-%Y') as dtAnuncio
+		        FROM anuncio a
+				JOIN statusAnuncio s using(idStatusAnuncio)
+				JOIN nivelAnuncio n using(idNivelAnuncio)
+				JOIN tipoProduto t using(idTipoProduto)				
+				JOIN subCategoria sub using(idSubCategoria)
+				JOIN categoria cat using(idCategoria)				
+				ORDER BY a.dtInicioAnuncio DESC
+				LIMIT ".$qtd."";				
+		$resultado = mysql_query($sql);		
+		return $resultado;
+	}
+	
+	function selectAnuncio($a){
+		$sql = "SELECT *, DATE_FORMAT(dtInicioAnuncio,'%d-%b-%Y') as dtAnuncio
+		        FROM anuncio a
+				JOIN statusAnuncio s using(idStatusAnuncio)
+				JOIN nivelAnuncio n using(idNivelAnuncio)
+				JOIN tipoProduto t using(idTipoProduto)				
+				JOIN subCategoria sub using(idSubCategoria)
+				JOIN categoria cat using(idCategoria)	
+			   WHERE idAnuncio = ".$a."";				
 		$resultado = mysql_query($sql);		
 		return $resultado;
 	}

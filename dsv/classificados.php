@@ -53,8 +53,8 @@
               <hr>      
               <ul class="list-unstyled">                
                 <?php
-					if(isset($_GET['cat']))
-					listaMenuCategorias($_GET['cat']); 
+					if(isset($_GET['c']))
+					listaMenuCategorias($_GET['c']); 
 					else
 					listaMenuCategorias(0);                
                 ?>
@@ -85,8 +85,8 @@
               			<hr>
                         <ol class="breadcrumb">
                           <li><a href="index.php"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
-                          <?php if(isset($_GET['cat']))breadcrumbCategoria($_GET['cat']); ?>
-                          <?php if(isset($_GET['scat']))breadcrumbSubCategoria($_GET['cat'], $_GET['scat']); ?>
+                          <?php if(isset($_GET['c']))breadcrumbCategoria($_GET['c']); ?>
+                          <?php if(isset($_GET['s']))breadcrumbSubCategoria($_GET['c'], $_GET['s']); ?>
                         </ol>
                     </div><!-- /col-md-12 -->
                 </div><!-- /row -->                                           
@@ -114,7 +114,7 @@
 				<?php
 				$color = 0;
 			  for($i = 0; $i <21; $i++){
-				echo"<a href='anuncio.php?cat=1&scat=1' class='list-group-item'>";
+				echo"<a href='anuncio.php?c=1&s=1' class='list-group-item'>";
               	echo"<div class='row'>";
 				echo"	<div class='col-md-2'>";
 				echo"		<img class='media-object' src='img/555.gif' width='100px' alt='...'>";

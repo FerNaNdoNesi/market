@@ -18,7 +18,7 @@
 				while($rowSub = mysql_fetch_array($subCategorias)){
 					if($rowCat['idCategoria'] == $rowSub['idCategoria']){
 						echo'   	<li>';
-						echo'			<a href="classificados.php?cat='.$rowSub['idCategoria'].'&scat='.$rowSub['idSubCategoria'].'">';
+						echo'			<a href="classificados.php?c='.$rowSub['idCategoria'].'&s='.$rowSub['idSubCategoria'].'">';
 						echo'			'.$rowSub['tituloSubCategoria'].'';
 						echo'			<span class="badge badge-info">'.$rowSub['idSubCategoria'].'</span></a>';
 						echo'		</li>';
@@ -33,7 +33,7 @@
 	function breadcrumbCategoria($id){
 		$categoria = selectCategoria($id);
 		while ($rowCat = mysql_fetch_array($categoria)) {		
-			echo' <li><a href="classificados.php?cat='.$rowCat['idCategoria'].'">'.$rowCat['tituloCategoria'].'</a></li>';
+			echo' <li><a href="classificados.php?c='.$rowCat['idCategoria'].'">'.$rowCat['tituloCategoria'].'</a></li>';
 		}
 	}
 	
@@ -41,7 +41,7 @@
 		$subCategoria = selectSubCategoria($id, $id2);
 		while ($rowSub = mysql_fetch_array($subCategoria)) {		
 			echo' <li class="active">';
-			echo'<a href="classificados.php?cat='.$rowSub['idCategoria'].'&scat='.$rowSub['idSubCategoria'].'">'.$rowSub['tituloSubCategoria'].'</a></li>';
+			echo'<a href="classificados.php?c='.$rowSub['idCategoria'].'&s='.$rowSub['idSubCategoria'].'">'.$rowSub['tituloSubCategoria'].'</a></li>';
 		}
 	}
 	
@@ -49,7 +49,7 @@
 		$categorias = selectCategoria($id);
 		$cont=0;
 		while ($rowCat = mysql_fetch_array($categorias)) {
-			echo'<a href="classificados.php?cat='.$rowCat['idCategoria'].'">';
+			echo'<a href="classificados.php?c='.$rowCat['idCategoria'].'">';
 			echo'	<div class="col-xs-3 text-center">';
 			echo'		<img src="img/categorias/'.$rowCat['nomeCategoria'].'.png" class="img-circle img-responsive">'.$rowCat['tituloCategoria'].'';
 			echo'	</div>';
@@ -58,6 +58,54 @@
 				echo'</br>';
 				$cont=0;	
 			}
+		}
+	}
+	
+	function listarUltimosAnuncios($qtd){
+		$anuncios = selectUltimosAnuncios($qtd);
+		while ($rowAnu = mysql_fetch_array($anuncios)) {
+			echo"<a href='anuncio.php?c=".$rowAnu['idCategoria']."&s=".$rowAnu['idSubCategoria']."&a=".$rowAnu['idAnuncio']."' class='list-group-item'>";
+			echo"<div class='row'>";
+			echo"	<div class='col-md-2'>";
+			echo"		<img class='media-object' src='img/555.gif' width='100px' alt='...'>";
+			echo"	</div>";
+			echo"	<div class='col-md-5'>";
+			echo"		<h4><i3>".$rowAnu['tituloAnuncio']."</i3></h4>";
+			echo"	</div>";
+			echo"	<div class='col-md-2 text-right'>";
+			echo"		<h6><i3>".$rowAnu['valorAnuncio']."</i3></h6>";
+			echo"	</div>";
+			echo"	<div class='col-md-1 text-right'>";
+			echo"		<i3><span class='badge badge-info'>".$rowAnu['countVisitas']."</span></i3>";
+			echo"	</div>";
+			echo"	<div class='col-md-2 text-right'>";
+			echo"		<h6><i3>".$rowAnu['dtAnuncio']."</i3></h6>";
+			echo"	</div>";
+			echo"</div>";
+			echo"</a>";
+		}		
+	}
+	
+	function verAnuncio($a){
+		$anuncio = selectAnuncio($a);		
+		while ($rowAnu = mysql_fetch_array($anuncios)) {			  
+			echo" <div class='panel panel-success'>";
+			echo"  <div class='panel-heading'>";
+			echo"    <h3 class='panel-title'>Titulo do anúncio</h3>";
+			echo"  </div>";
+			echo"  <div class='panel-body'>";
+			echo"    <div class='row'>";
+			echo"        <div class='col-md-8'>";
+			echo"        	Toda descrição do anúncio";
+			echo"        	<hr>";
+			echo"        </div>";
+			echo"        <div class='col-md-4'>";
+			echo"        	Fotos";
+			echo"        	<hr>";
+			echo"        </div>";
+			echo"    </div>";
+			echo"  </div>";
+			echo"</div>";	
 		}
 	}
 	

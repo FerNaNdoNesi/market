@@ -135,132 +135,7 @@
                   <div class="panel-body">	
                   <?php
 				  	mostraCategorias(0);
-				  ?>
-                    <!--<a href="classificados.php">
-                    	<div class="col-xs-3 text-center">
-                        	<img src="img/categorias/imóveis.png" class="img-circle img-responsive">im&oacute;veis
-                        </div>
-                    </a>
-                    <a href="classificados.php">
-                        <div class="col-xs-3 text-center">
-	                        <img src="img/categorias/informatica.png" class="img-circle img-responsive">inform&aacute;tica
-                        </div>
-                    </a>
-                    <a href="classificados.php">
-                        <div class="col-xs-3 text-center">
-                        	<img src="img/categorias/jogos.png" class="img-circle img-responsive">jogos
-                        </div>
-                    </a>
-                    <a href="classificados.php">
-                        <div class="col-xs-3 text-center">
-                        	<img src="img/categorias/telefonia.png" class="img-circle img-responsive">telefonia
-                        </div>
-                    </a>
-                    </br>
-                    <a href="classificados.php">
-                        <div class="col-xs-3 text-center">
-                        	<img src="img/categorias/eletronicos.png" class="img-circle img-responsive">eletr&ocirc;nicos
-                        </div>
-                    </a>
-                    <a href="classificados.php">
-                        <div class="col-xs-3 text-center">
-                        	<img src="img/categorias/moveis.png" class="img-circle img-responsive">m&oacute;veis
-                        </div>
-                    </a>
-                    <a href="classificados.php">
-                        <div class="col-xs-3 text-center">
-                        	<img src="img/categorias/esporte.png" class="img-circle img-responsive">esporte
-                        </div>
-                    </a>
-                    <a href="classificados.php">
-                        <div class="col-xs-3 text-center">
-                        	<img src="img/categorias/veiculos.png" class="img-circle img-responsive">veiculos
-                        </div>
-                    </a>
-                    </br>
-                    <a href="classificados.php">
-                    	<div class="col-xs-3 text-center">
-                        	<img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive">categorias
-                        </div>
-                    </a>
-                    <a href="classificados.php">
-                    	<div class="col-xs-3 text-center">
-                        	<img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive">categorias
-                        </div>
-                    </a>
-                    <a href="classificados.php">
-                    	<div class="col-xs-3 text-center">
-                        	<img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias
-                        </div>
-                    </a>
-                    <a href="classificados.php">
-                    	<div class="col-xs-3 text-center">
-                        	<img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias
-                        </div>
-                    </a>
-                    </br>
-                    <a href="classificados.php">
-                    	<div class="col-xs-3 text-center">
-                        	<img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive">categorias
-                        </div>
-                    </a>
-                    <a href="classificados.php">
-                    	<div class="col-xs-3 text-center">
-                        	<img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive">categorias
-                        </div>
-                    </a>
-                    <a href="classificados.php">
-                    	<div class="col-xs-3 text-center">
-                        	<img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias
-                        </div>
-                    </a>
-                    <a href="classificados.php">
-                    	<div class="col-xs-3 text-center">
-                        	<img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias
-                        </div>
-                    </a>
-                    </br>
-                    <a href="classificados.php">
-                    	<div class="col-xs-3 text-center">
-                        	<img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive">categorias
-                        </div>
-                    </a>
-                    <a href="classificados.php">
-                    	<div class="col-xs-3 text-center">
-                        	<img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive">categorias
-                        </div>
-                    </a>
-                    <a href="classificados.php">
-                    	<div class="col-xs-3 text-center">
-                        	<img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias
-                        </div>
-                    </a>
-                    <a href="#">
-                    	<div class="col-xs-3 text-center">
-                        	<img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias
-                        </div>
-                    </a>
-                    </br>
-                    <a href="#">
-                    	<div class="col-xs-3 text-center">
-                        	<img src="http://placehold.it/80/BBBBBB/FFF" class="img-circle img-responsive">categorias
-                        </div>
-                    </a>
-                    <a href="#">
-                    	<div class="col-xs-3 text-center">
-                        	<img src="http://placehold.it/80/EFEFEF/555" class="img-circle img-responsive">categorias
-                        </div>
-                    </a>
-                    <a href="#">
-                    	<div class="col-xs-3 text-center">
-                        	<img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias
-                        </div>
-                    </a>
-                    <a href="#">
-                    	<div class="col-xs-3 text-center">
-                        	<img src="http://placehold.it/80/EEEEEE/222" class="img-circle img-responsive">categorias
-                        </div>
-                    </a>-->
+				  ?>                    
                   </div>
                </div>
               
@@ -288,29 +163,8 @@
                 </div>
                 <hr>
 				<?php
-				$color = 0;
-			  for($i = 0; $i <21; $i++){
-				echo"<a href='anuncio.php?cat=1&scat=1' class='list-group-item'>";
-              	echo"<div class='row'>";
-				echo"	<div class='col-md-2'>";
-				echo"		<img class='media-object' src='img/555.gif' width='100px' alt='...'>";
-				echo"	</div>";
-				echo"	<div class='col-md-5'>";
-				echo"		<h4><i3>Anúncio com um nome maior que o normal e totalizando ".$i."</i3></h4>";
-				echo"	</div>";
-				echo"	<div class='col-md-2 text-right'>";
-				echo"		<h6><i3>R$ ".$i."00.100,90</i3></h6>";
-				echo"	</div>";
-				echo"	<div class='col-md-1 text-right'>";
-				echo"		<i3><span class='badge badge-info'>".$i++."</span></i3>";
-				echo"	</div>";
-				echo"	<div class='col-md-2 text-right'>";
-				echo"		<h6><i3>18/06/2014</i3></h6>";
-				echo"	</div>";
-				echo"</div>";
-				echo"</a>";
-			  }
-			  ?>       
+					listarUltimosAnuncios(10);
+			  	?>       
               
             </div><!--/col-span-9 -->
         </div><!-- /row -->

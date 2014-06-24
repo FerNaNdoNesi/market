@@ -53,8 +53,8 @@
               <hr>      
               <ul class="list-unstyled">
               	<?php
-					if(isset($_GET['cat']))
-					listaMenuCategorias($_GET['cat']); 
+					if(isset($_GET['c']))
+					listaMenuCategorias($_GET['c']); 
 					else
 					listaMenuCategorias(0);                
                 ?>
@@ -85,30 +85,14 @@
               			<hr>
                         <ol class="breadcrumb">
                           <li><a href="index.php"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
-                          <?php if(isset($_GET['cat']))breadcrumbCategoria($_GET['cat']); ?>
-                          <?php if(isset($_GET['scat']))breadcrumbSubCategoria($_GET['cat'], $_GET['scat']); ?>
+                          <?php if(isset($_GET['c']))breadcrumbCategoria($_GET['c']); ?>
+                          <?php if(isset($_GET['s']))breadcrumbSubCategoria($_GET['c'], $_GET['s']); ?>
                           <li class="active">An&uacute;ncio</li>
                         </ol>
                     </div><!-- /col-md-12 -->
                 </div><!-- /row -->
-                <?php   
-                echo" <div class='panel panel-success'>";
-                echo"  <div class='panel-heading'>";
-                echo"    <h3 class='panel-title'>Titulo do anúncio</h3>";
-                echo"  </div>";
-                echo"  <div class='panel-body'>";
-                echo"    <div class='row'>";
-                echo"        <div class='col-md-8'>";
-                echo"        	Toda descrição do anúncio";
-				echo"        	<hr>";
-                echo"        </div>";
-                echo"        <div class='col-md-4'>";
-                echo"        	Fotos";
-				echo"        	<hr>";
-                echo"        </div>";
-                echo"    </div>";
-                echo"  </div>";
-                echo"</div>";
+                <?php
+					selectAnuncio($_GET['a']);
 				?>      
               
             </div><!--/col-span-9 -->
