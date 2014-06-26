@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
 <script src="js/tinymce/tinymce.min.js"></script><!--http://www.tinymce.com-->
 <script>
         tinymce.init({
@@ -20,11 +22,56 @@
 
 </head>
 <body>
-	<form action="cadastraAnuncio.php" id="usrform">
+	<form action="cadastraAnuncio.php" id="usrform1">
 		Titulo: <input type="text" name="titulo">
 
-		<textarea name="descricao" form="usrform">
-			...
+		<textarea name="descricao" form="usrform1">
+			
+		</textarea>
+		<input type="submit">
+	</form>
+	<form action="cadastraAnuncio.php" id="usrform2">
+		Titulo: <input type="text" name="titulo">
+
+		<textarea name="descricao" form="usrform2">
+			<h3 style="text-align: center;">Aluga-se apartamento centro da cidade</h3>
+			<p>Temos disponível um apartamento para locação direto com proprietário.</p>
+			<p>Localizado no centro da cidade.</p>
+			<p>Rua XV de novembro, próximo a igreja.</p>
+			<p><strong>Contendo:</strong></p>
+			<ul>
+			<li>1 Quarto <span style="text-decoration: underline;">com suite</span></li>
+			<li>2 Quartos</li>
+			<li>Banheiro social</li>
+			<li>Sala / Cozinha conjugados</li>
+			<li>Lavanderia</li>
+			<li>Saca com churrasqueira (de frente para rua)</li>
+			</ul>
+			<p><strong>Valor:</strong> R$ 750,00 + condomínio</p>
+			<hr/>
+			<p><strong>Contato:</strong></p>
+			<p><strong>Telefone:</strong> (42) 9999-0000 ou (42)3322-0000 <span style="text-decoration: underline;">falar com José</span></p>
+			<p><strong>Email:</strong> mercadolaranjeiras@gmail.com</p>
+		</textarea>
+		<input type="submit">
+	</form>
+	<hr>
+	<form action="cadastraAnuncio.php" id="usrform3">
+		Titulo: <input type="text" name="titulo">
+
+		<textarea name="descricao" form="usrform3">
+			<h3 style="text-align: center;">Vendo Moto Honda CB500F Hornet</h3>
+			<hr/>
+			<p style="text-align: center;">Moto único dono em estado de nova comprada em janeiro de 2014.</p>
+			<p style="text-align: center;">Revisões e troca de ol&eacute;o todas feitas em dia na concession&aacute;ria</p>
+			<p style="text-align: center;">pneus praticamente zerados, moto não possui nenhum arranhão!</p>
+			<p style="text-align: center;"><strong>Ano/Mod:</strong> (2013/2014)</p>
+			<p style="text-align: center;"><strong>Km:</strong> 5.000</p>
+			<p style="text-align: center;"><strong>Valor:</strong> R$ 30.000,00</p>
+			<p style="text-align: center;">acompanha: nota fiscal, manual e chave reserva.</p>
+			<p style="text-align: center;">Obs. Analiso possíbilidade de troca por carro acima de 2012.</p>
+			<p>Interessados entrar em contato no telefone: <strong>(42)9999-0000</strong> <span style="text-decoration: underline;">falar com José</span></p>
+			<p>ou no email: <strong>mercadolaranjeiras@gmail.com</strong></p>
 		</textarea>
 		<input type="submit">
 	</form>
