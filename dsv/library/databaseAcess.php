@@ -58,7 +58,8 @@
 				JOIN tipoProduto t using(idTipoProduto)				
 				JOIN subCategoria sub using(idSubCategoria)
 				JOIN categoria cat using(idCategoria)
-				JOIN usuario usr using(idUsuario)	
+				JOIN usuario usr using(idUsuario)
+				JOIN tipoProduto using(idTipoProduto)	
 			   WHERE idAnuncio = ".$a."";				
 		$resultado = mysql_query($sql);		
 		return $resultado;
@@ -85,6 +86,21 @@
 					 usr.telefone,
 					 descricaoNivelUsuario,
 					 descricaoStatusUsuario";				
+		$resultado = mysql_query($sql);		
+		return $resultado;
+	}
+	
+	function selectMeusAnuncios($usr){
+		$sql = "SELECT *, DATE_FORMAT(dtInicioAnuncio,'%d-%b-%Y') as dtAnuncio
+		        FROM anuncio a
+				JOIN statusAnuncio s using(idStatusAnuncio)
+				JOIN nivelAnuncio n using(idNivelAnuncio)
+				JOIN tipoProduto t using(idTipoProduto)				
+				JOIN subCategoria sub using(idSubCategoria)
+				JOIN categoria cat using(idCategoria)
+				JOIN usuario usr using(idUsuario)	
+			   WHERE idUsuario = ".$usr."			
+				ORDER BY a.dtInicioAnuncio DESC";				
 		$resultado = mysql_query($sql);		
 		return $resultado;
 	}

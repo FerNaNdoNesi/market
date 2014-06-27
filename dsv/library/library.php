@@ -132,7 +132,10 @@
 			echo'	  <div class="col-md-8">';
 			echo'		'.$rowAnu['descricaoAnuncio'].' ';
 			echo'		<hr>';
-			echo'		<div class="jumbotron col-md-9">';
+			echo'		<div class="jumbotron col-md-12">';
+			echo'  			<p><h4> <i3>Valor: '.$rowAnu['valorAnuncio'].'</i3></h4></p>';
+			echo'  			<p><h4><i class="glyphicon glyphicon-shopping-cart"></i> <i3>Produto: '.$rowAnu['descricaoTipoProduto'].'</i3></h4></p><hr>';
+			echo'  			<p><h4><i3>CONTATO DO ANÚNCIANTE:</i3></h4></p>';
 			echo'  			<p><h4><i class="glyphicon glyphicon-user"></i> <i3> '.$rowAnu['nome'].'</i3></h4></p>';
 			echo'  			<p><h4><i class="glyphicon glyphicon-envelope"></i> <i3> '.$rowAnu['email'].'</i3></h4></p>';
 			echo'  			<p><h4><i class="glyphicon glyphicon-earphone"></i> <i3> '.$rowAnu['telefone'].'</i3></h4></p>';
@@ -181,6 +184,12 @@
 			echo'	  </div>';
 			echo'     <div class="col-md-6">';
 			echo' 		<p><h4><i3><i2><i class="glyphicon glyphicon-copyright-mark"></i></i2> '.$rowUsu['descricaoNivelUsuario'].'</i3></h4></p>';
+			echo'	  </div>';
+			echo'     <div class="col-md-6 text-right">';
+			echo'  		<p><h4><i class="glyphicon glyphicon-calendar"></i><i3> Anúnciante desde: </i3></h4></p>';
+			echo'	  </div>';
+			echo'     <div class="col-md-6">';
+			echo' 		<p><h4><i3>'.$rowUsu['usuarioDesde'].'</i3></h4></p>';
 			echo'	  </div>';		
 			echo'     <div class="col-md-6 text-right">';
 			echo'  		<p><h4><i class="glyphicon glyphicon-bullhorn"></i><i3> Anúncios ativos: </i3></h4></p>';
@@ -190,6 +199,40 @@
 			echo'	  </div>';
 			echo'	</div>';			
 		}
+	}
+	
+	function listarMeusAnuncios($usr){
+		$anuncio = selectMeusAnuncios($usr);
+		echo'	<div class="panel-group" id="accordion">';	  					
+		while ($rowAnu = mysql_fetch_array($anuncio)) {	                         
+			echo'    <div class="panel panel-default">';
+			echo'      <div class="panel-heading">';
+			echo'        <h4 class="panel-title">';
+			echo'          <a data-toggle="collapse" data-parent="#accordion" href="#'.$rowAnu['idAnuncio'].'">';
+			echo'            '.$rowAnu['tituloAnuncio'].' ';
+			echo'          </a>';
+			echo'		   <p class="text-right">';
+			echo'		   <a href="#"> <i class="glyphicon glyphicon-pencil"></i> Editar</a>';
+			echo'		   <a href="#"><i class="glyphicon glyphicon-trash"></i> Excluir</a>';
+			echo'		   </p>';
+			echo'        </h4>';
+			echo'      </div>';
+			echo'      <div id="'.$rowAnu['idAnuncio'].'" class="panel-collapse collapse">';
+			echo'        <div class="panel-body">';
+			echo'	 		<div class="row">';
+			echo'	  			<div class="col-md-8">';
+			echo'           		'.$rowAnu['descricaoAnuncio'].' ';
+			echo'        		</div>';
+			echo'	  			<div class="col-md-4">';
+			echo'           		fotos ';
+			echo'        		</div>';
+			echo'        	</div>';
+			echo'        </div>';
+			echo'      </div>';
+			echo'    </div>';//<!-- /panel-default -->                          
+	  	}
+	  	echo'	</div>';//<!-- /accordion -->	
+		
 	}
 	
 /*****************************************************************/	
