@@ -46,7 +46,7 @@
 	}
 	
 	function breadcrumbAnuncio($id){
-		$anuncio = selectAnuncio($id);
+		$anuncio = selectUmAnuncio($id);
 		while ($rowAnu = mysql_fetch_array($anuncio)) {		
 			echo' <li class="active">'.$rowAnu['tituloAnuncio'].'</li>';
 		}
@@ -68,8 +68,8 @@
 		}
 	}
 	
-	function listarUltimosAnuncios($qtd){
-		$anuncios = selectUltimosAnuncios($qtd);
+	function listarAnuncios($cat, $sub){
+		$anuncios = selectAnuncios($cat, $sub);
 		while ($rowAnu = mysql_fetch_array($anuncios)) {
 			echo'<a href="anuncio.php?c='.$rowAnu['idCategoria'].'&s='.$rowAnu['idSubCategoria'].'&a='.$rowAnu['idAnuncio'].'" class="list-group-item">';
 			echo'<div class="row">';
@@ -78,6 +78,7 @@
 			echo'	</div>';
 			echo'	<div class="col-md-5">';
 			echo'		<h4><i3>'.$rowAnu['tituloAnuncio'].'</i3></h4>';
+			echo'		</br><h6><i3>Categoria: '.$rowAnu['tituloSubCategoria'].'</i3></h6>';
 			echo'	</div>';
 			echo'	<div class="col-md-2 text-right">';
 			echo'		<h6><i3>'.$rowAnu['valorAnuncio'].'</i3></h6>';
@@ -93,26 +94,101 @@
 		}		
 	}
 	
+	function listarUltimosAnuncios($qtd){
+		$anuncios = selectUltimosAnuncios($qtd);
+		while ($rowAnu = mysql_fetch_array($anuncios)) {
+			echo'<a href="anuncio.php?c='.$rowAnu['idCategoria'].'&s='.$rowAnu['idSubCategoria'].'&a='.$rowAnu['idAnuncio'].'" class="list-group-item">';
+			echo'<div class="row">';
+			echo'	<div class="col-md-2">';
+			echo'		<img class="media-object" src="img/555.gif" width="100px" alt="...">';
+			echo'	</div>';
+			echo'	<div class="col-md-5">';
+			echo'		<h4><i3>'.$rowAnu['tituloAnuncio'].'</i3></h4>';	
+			echo'		</br><h6><i3>Categoria: '.$rowAnu['tituloSubCategoria'].'</i3></h6>';		
+			echo'	</div>';
+			echo'	<div class="col-md-2 text-right">';
+			echo'		<h6><i3>'.$rowAnu['valorAnuncio'].'</i3></h6>';			
+			echo'	</div>';
+			echo'	<div class="col-md-1 text-right">';
+			echo'		<i3><span class="badge badge-info">'.$rowAnu['countVisitas'].'</span></i3>';
+			echo'	</div>';
+			echo'	<div class="col-md-2 text-right">';
+			echo'		<h6><i3>'.$rowAnu['dtAnuncio'].'</i3></h6>';
+			echo'	</div>';
+			echo'</div>';
+			echo'</a>';
+		}		
+	}		
+	
 	function verAnuncio($a){
-		$anuncio = selectAnuncio($a);		
+		$anuncio = selectUmAnuncio($a);		
 		while ($rowAnu = mysql_fetch_array($anuncio)) {			  
 			echo'<div class="panel panel-success">';
 			echo'	<div class="panel-heading">';
 			echo'	 <h3 class="panel-title">'.$rowAnu['tituloAnuncio'].'</h3>';
-			echo' </div>';
+			echo' 	</div>';
 			echo' <div class="panel-body">';
 			echo'	 <div class="row">';
 			echo'	  <div class="col-md-8">';
 			echo'		'.$rowAnu['descricaoAnuncio'].' ';
 			echo'		<hr>';
-			echo'   </div>';
-			echo'   <div class="col-md-4">';
+			echo'		<div class="jumbotron col-md-9">';
+			echo'  			<p><h4><i class="glyphicon glyphicon-user"></i> <i3> '.$rowAnu['nome'].'</i3></h4></p>';
+			echo'  			<p><h4><i class="glyphicon glyphicon-envelope"></i> <i3> '.$rowAnu['email'].'</i3></h4></p>';
+			echo'  			<p><h4><i class="glyphicon glyphicon-earphone"></i> <i3> '.$rowAnu['telefone'].'</i3></h4></p>';
+			echo'		</div>';
+			echo'     </div>';
+			echo'     <div class="col-md-4">';
 			echo'		Fotos';
 			echo'   	<hr>';
-			echo'   </div>';
-			echo'  </div>';
-			echo' </div>';
+			echo'     </div>';
+			echo'    </div>';// <!-- /row -->
+			echo' </div>';// <!-- /panel-body -->
 			echo'</div>';	
+		}
+	}
+	
+	function verResumoUsuario($usr){
+		$usuario = selectResumoUsuario($usr);		
+		while ($rowUsu = mysql_fetch_array($usuario)) {			  			
+			echo'	<div class="jumbotron col-md-12">';
+			echo'     <div class="col-md-6 text-right">';
+			echo'  		<p><h4><i class="glyphicon glyphicon-user"></i><i3> Usuário: </i3></h4></p>';
+			echo'	  </div>';
+			echo'     <div class="col-md-6">';
+			echo' 		<p><h4><i3>'.$rowUsu['nome'].'</i3></h4></p>';
+			echo'	  </div>';
+			echo'     <div class="col-md-6 text-right">';
+			echo'  		<p><h4><i class="glyphicon glyphicon-envelope"></i><i3> Email: </i3></h4></p>';
+			echo'	  </div>';
+			echo'     <div class="col-md-6">';
+			echo' 		<p><h4><i3>'.$rowUsu['email'].'</i3></h4></p>';
+			echo'	  </div>';
+			echo'     <div class="col-md-6 text-right">';
+			echo'  		<p><h4><i class="glyphicon glyphicon-earphone"></i><i3> Telefone: </i3></h4></p>';
+			echo'	  </div>';
+			echo'     <div class="col-md-6">';
+			echo' 		<p><h4><i3>'.$rowUsu['telefone'].'</i3></h4></p>';
+			echo'	  </div>';
+			echo'     <div class="col-md-6 text-right">';
+			echo'  		<p><h4><i class="glyphicon glyphicon-stats"></i><i3> Status usuário: </i3></h4></p>';
+			echo'	  </div>';
+			echo'     <div class="col-md-6">';
+			echo' 		<p><h4><i3>'.$rowUsu['descricaoStatusUsuario'].'</i3></h4></p>';
+			echo'	  </div>';
+			echo'     <div class="col-md-6 text-right">';
+			echo'  		<p><h4><i class="glyphicon glyphicon-copyright-mark"></i><i3> Nível usuário: </i3></h4></p>';
+			echo'	  </div>';
+			echo'     <div class="col-md-6">';
+			echo' 		<p><h4><i3><i2><i class="glyphicon glyphicon-copyright-mark"></i></i2> '.$rowUsu['descricaoNivelUsuario'].'</i3></h4></p>';
+			echo'	  </div>';		
+			echo'     <div class="col-md-6 text-right">';
+			echo'  		<p><h4><i class="glyphicon glyphicon-bullhorn"></i><i3> Anúncios ativos: </i3></h4></p>';
+			echo'	  </div>';
+			echo'     <div class="col-md-6">';
+			echo' 		<p><h4><i3><kbd>0'.$rowUsu['qtdAnuncios'].'</kbd></i3></h4></p>';
+			echo'	  </div>';
+			echo'	</div>';			
 		}
 	}
 	
@@ -531,32 +607,5 @@
 		
 		return $r;
 	}
-
-/*FUNCOES DESENVOLVIDAS POR FERNANDONESI@GMAIL.COM*/
-	function listarServidor(){
-		$resultado = selectServidor();
-			echo' <kbd>Usuários TESTE existentes:</kbd></br></br>';	
-		while ($row = mysql_fetch_array($resultado)) {
-			echo 'Nome: '.$row['nome'].' '.$row['sobrenome'].'</br>';
-			echo 'Siape: <kbd>'.$row['siape'].'</kbd></br>';
-			echo 'Email: <kbd>'.$row['email'].'</kbd></br>';
-			echo 'Senha: <kbd>1234</kbd></br>';
-			echo 'Nível: '.$row['nivel'].'</br>';
-			echo '</br></br>';
-		}
-	}
-	
-	function listarMenu($nivel){		
-		$resultado = selectMenu($nivel);
-		echo '<div class="list-group-success">';
-        echo '  <a href="inicio.php" class="list-group-item list-group-item-success leftt" target="iframe-tela-meio">Inicio</a>';
-		while ($row = mysql_fetch_array($resultado)) {
-        echo '  <a href="'.$row['linkAreaMenu'].'" class="list-group-item leftt" target="iframe-tela-meio">'.$row['descricaoAreaMenu'].'</a>';
-		}		
-        echo '  <a href="sair.php" class="list-group-item leftt">Sair</a>';
-        echo '</div>';
-	}
-	
-/*FUNCOES DESENVOLVIDAS POR FERNANDONESI@GMAIL.COM*/
 	
 ?>

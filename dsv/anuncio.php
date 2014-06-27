@@ -5,9 +5,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
-		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"> <!-- charset=utf-8">-->
-		<meta charset="utf-8"> <!-- charset="iso-8859-">-->
-		<title>Anï¿½ncio</title>
+		<meta http-equiv="content-type" content="text/html">
+		<meta charset="iso-8859-1"><!-- charset="iso-8859-1">-->
+		<title>Anúncio</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		
@@ -27,14 +27,14 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><i class="glyphicon glyphicon-plus"></i> Criar An&uacute;ncio</a></li>
+            <li><a href="#"><i class="glyphicon glyphicon-plus"></i> Criar Anúncio</a></li>
             <li class="dropdown">
-              <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
+              <a class="dropdown-toggle" role="button" data-toggle="dropdown">
                 <i class="glyphicon glyphicon-user"></i> FerNaNdoNesi <span class="caret"></span>
               </a>
               <ul id="g-account-menu" class="dropdown-menu" role="menu">
-                <li><a href="#">Painel de controle</a></li>
-                <li><a href="#">Meus an&uacute;ncios</a></li>
+                <li><a href="painel.php">Painel de controle</a></li>
+                <li><a href="#">Meus anúncios</a></li>
                 <li><a href="#">Sair</a></li>
               </ul>
             </li>
@@ -62,15 +62,15 @@
                    
               <hr>
               
-              <strong><i class="glyphicon glyphicon-sort-by-attributes"></i> VER AN&Uacute;NCIOS:</strong>  
+              <strong><i class="glyphicon glyphicon-sort-by-attributes"></i> VER ANÚNCIOS:</strong>  
               
               <hr>
               
               <ul class="nav nav-pills nav-stacked">
                 <li><a href="#"><i2 class="glyphicon glyphicon-star"></i2><i3> Mais visitados </i3></a></li>
-                <li><a href="#"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Melhores an&uacute;ncios </i3></a></li>
+                <li><a href="#"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Melhores anúncios </i3></a></li>
                 <li><a href="#"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Eventos </i3></a></li>
-                <li><a href="#"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Promo&ccedil;&otilde;es </i3></a></li>
+                <li><a href="#"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Promoções </i3></a></li>
               </ul>
               
               <hr>
@@ -81,7 +81,7 @@
             <div class="col-md-9">
                 <div class="row">
                     <div class="col-md-12">
-                    	<strong><i class="glyphicon glyphicon-th-list"></i> AN&Uacute;NCIO </strong>
+                    	<strong><i class="glyphicon glyphicon-th-list"></i> ANÚNCIO </strong>
               			<hr>
                         <ol class="breadcrumb">
                           <li><a href="index.php"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
@@ -92,6 +92,7 @@
                     </div><!-- /col-md-12 -->
                 </div><!-- /row -->
                 <?php
+					if(isset($_GET['a']))
 					verAnuncio($_GET['a']);
 				?>      
               

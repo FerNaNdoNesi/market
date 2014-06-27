@@ -21,6 +21,21 @@
 		return $resultado;
 	}
 	
+	function selectAnuncios($cat, $sub){
+		$sql = "SELECT *, DATE_FORMAT(dtInicioAnuncio,'%d-%b-%Y') as dtAnuncio
+		        FROM anuncio a
+				JOIN statusAnuncio s using(idStatusAnuncio)
+				JOIN nivelAnuncio n using(idNivelAnuncio)
+				JOIN tipoProduto t using(idTipoProduto)				
+				JOIN subCategoria sub using(idSubCategoria)
+				JOIN categoria cat using(idCategoria)
+				WHERE cat.idCategoria = ".$cat."
+				AND (sub.idSubCategoria = ".$sub." OR 0 = ".$sub.")				
+				ORDER BY a.dtInicioAnuncio DESC";				
+		$resultado = mysql_query($sql);		
+		return $resultado;
+	}
+	
 	function selectUltimosAnuncios($qtd){
 		$sql = "SELECT *, DATE_FORMAT(dtInicioAnuncio,'%d-%b-%Y') as dtAnuncio
 		        FROM anuncio a
@@ -33,17 +48,43 @@
 				LIMIT ".$qtd."";				
 		$resultado = mysql_query($sql);		
 		return $resultado;
-	}
+	}		
 	
-	function selectAnuncio($a){
+	function selectUmAnuncio($a){
 		$sql = "SELECT *, DATE_FORMAT(dtInicioAnuncio,'%d-%b-%Y') as dtAnuncio
 		        FROM anuncio a
 				JOIN statusAnuncio s using(idStatusAnuncio)
 				JOIN nivelAnuncio n using(idNivelAnuncio)
 				JOIN tipoProduto t using(idTipoProduto)				
 				JOIN subCategoria sub using(idSubCategoria)
-				JOIN categoria cat using(idCategoria)	
+				JOIN categoria cat using(idCategoria)
+				JOIN usuario usr using(idUsuario)	
 			   WHERE idAnuncio = ".$a."";				
+		$resultado = mysql_query($sql);		
+		return $resultado;
+	}
+	
+	function selectResumoUsuario($usr){
+		$sql = "SELECT usr.idUsuario,
+					   DATE_FORMAT(usr.usuarioDesde,'%d-%b-%Y') as usuarioDesde,
+					   usr.nome,
+					   usr.email,
+					   usr.telefone,
+					   descricaoNivelUsuario,
+					   descricaoStatusUsuario,
+					   count(idAnuncio) as qtdAnuncios
+		        FROM usuario usr
+				JOIN nivelUsuario using(idNivelUsuario)
+				JOIN statusUsuario using(idStatusUsuario)
+				JOIN anuncio using(idUsuario)	
+			   WHERE usr.idUsuario = ".$usr."
+			GROUP BY usr.idUsuario,
+			         usuarioDesde,
+					 usr.nome,
+					 usr.email,
+					 usr.telefone,
+					 descricaoNivelUsuario,
+					 descricaoStatusUsuario";				
 		$resultado = mysql_query($sql);		
 		return $resultado;
 	}
@@ -546,28 +587,5 @@
 		return $r;
 		
 	}
-	
-/*FUNCOES DESENVOLVIDAS POR FERNANDONESI@GMAIL.COM*/
-	function selectServidor(){
-		$sql = "SELECT *
-		          FROM servidor
-				  JOIN nivelServidor using(idNivelServidor)";
-		
-		$r=dbConsulta($sql);
-		return $r;
-	}
-	
-	function selectMenu($nivel){
-		$sql = "SELECT nomeAreaMenu,
-		               descricaoAreaMenu,
-					   linkAreaMenu
-		          FROM areaMenu
-				  JOIN nivelServidor_areaMenu using(idAreaMenu)
-				  where nivelServidor_areaMenu.idNivelServidor = ".$nivel."";		
-		$r=dbConsulta($sql);
-		return $r;
-	}
-	
-/*FUNCOES DESENVOLVIDAS POR FERNANDONESI@GMAIL.COM*/
 	
 ?>
