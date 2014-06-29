@@ -209,10 +209,10 @@
 			echo'      <div class="panel-heading">';
 			echo'        <h4 class="panel-title">';
 			echo'          <a data-toggle="collapse" data-parent="#accordion" href="#'.$rowAnu['idAnuncio'].'">';
-			echo'            '.$rowAnu['tituloAnuncio'].' ';
+			echo'            '.$rowAnu['tituloAnuncio'].' <i class="glyphicon glyphicon-chevron-right"></i>';
 			echo'          </a>';
 			echo'		   <p class="text-right">';
-			echo'		   <a href="#"> <i class="glyphicon glyphicon-pencil"></i> Editar</a>';
+			echo'		   <a href="#"><i class="glyphicon glyphicon-pencil"></i> Editar</a>';
 			echo'		   <a href="#"><i class="glyphicon glyphicon-trash"></i> Excluir</a>';
 			echo'		   </p>';
 			echo'        </h4>';
@@ -232,6 +232,35 @@
 			echo'    </div>';//<!-- /panel-default -->                          
 	  	}
 	  	echo'	</div>';//<!-- /accordion -->	
+		
+	}
+	
+	function listarDropMenuCategorias(){
+		$subCategoria = selectSubCategoria(0, 0);
+		echo'	<select name="inputSubCategoria">';	  					
+		while ($rowSub = mysql_fetch_array($subCategoria)) {	
+		echo'	<option value="'.$rowSub['idSubCategoria'].'">'.$rowSub['tituloCategoria'].' -- '.$rowSub['tituloSubCategoria'].'</option>';                               
+		}
+		echo'	</select>';
+		
+	}
+	
+	function listarDropMenuTipoProduto(){
+		$tipoProduto = selectTipoProduto(0);
+		echo'	<select name="inputTipoProduto">';	  					
+		while ($rowTp = mysql_fetch_array($tipoProduto)) {	
+		echo'	<option value="'.$rowTp['idTipoProduto'].'">'.$rowTp['descricaoTipoProduto'].'</option>';                               
+		}
+		echo'	</select>';
+		
+	}
+	
+	function listarDropMenuDias(){		
+		echo'	<select name="inputDias">';	  				
+		echo'	<option value="30"> 30 Dias</option>';
+		echo'	<option value="30"> 60 Dias</option>';
+		echo'	<option value="30"> 90 Dias</option>';                               
+		echo'	</select>';
 		
 	}
 	

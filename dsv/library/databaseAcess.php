@@ -104,6 +104,15 @@
 		$resultado = mysql_query($sql);		
 		return $resultado;
 	}
+	
+	function selectTipoProduto($tp){
+		$sql = "SELECT *
+				FROM tipoProduto	
+			   WHERE (idTipoProduto = ".$tp." OR 0 = ".$tp.")			
+		    ORDER BY descricaoTipoProduto";				
+		$resultado = mysql_query($sql);		
+		return $resultado;
+	}
 
 /*****************************************************************/	
 

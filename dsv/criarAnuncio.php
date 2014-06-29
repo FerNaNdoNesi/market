@@ -7,7 +7,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html">
 		<meta charset="iso-8859-1"><!-- charset="iso-8859-1">-->
-		<title>Anúncio</title>
+		<title>Painel de controle</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		
@@ -27,13 +27,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="painel.php?c=1"><i class="glyphicon glyphicon-plus"></i> Criar Anúncio</a></li>
+            <li><a href="criarAnuncio.php"><i class="glyphicon glyphicon-plus"></i> Criar Anúncio</a></li>
             <li class="dropdown">
               <a class="dropdown-toggle" role="button" data-toggle="dropdown">
                 <i class="glyphicon glyphicon-user"></i> FerNaNdoNesi <span class="caret"></span>
               </a>
               <ul id="g-account-menu" class="dropdown-menu" role="menu">
-                <li><a href="painel.php">Painel de controle</a></li>
+                <li><a href="#">Editar perfil</a></li>
                 <li><a href="#">Meus anúncios</a></li>
                 <li><a href="#">Sair</a></li>
               </ul>
@@ -48,29 +48,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-              <!-- Left column -->
-              <strong><i class="glyphicon glyphicon-sort-by-attributes-alt"></i> SUB CATEGORIAS </strong>      
-              <hr>      
-              <ul class="list-unstyled">
-              	<?php
-					if(isset($_GET['c']))
-					listaMenuCategorias($_GET['c']); 
-					else
-					listaMenuCategorias(0);                
-                ?>
-              </ul>
-                   
-              <hr>
-              
-              <strong><i class="glyphicon glyphicon-sort-by-attributes"></i> VER ANÚNCIOS:</strong>  
+              <!-- Left column -->                            
+              <strong><i class="glyphicon glyphicon-cog"></i> PAINEL DE ANÚNCIOS</strong>  
               
               <hr>
               
-              <ul class="nav nav-pills nav-stacked">
-                <li><a href="#"><i2 class="glyphicon glyphicon-star"></i2><i3> Mais visitados </i3></a></li>
-                <li><a href="#"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Melhores anúncios </i3></a></li>
-                <li><a href="#"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Eventos </i3></a></li>
-                <li><a href="#"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Promoções </i3></a></li>
+              <ul class="nav nav-pills2 nav-stacked" role="tablist">
+              	<li><a href="painel.php"><i2 class="glyphicon glyphicon-star"></i2><i3> Voltar ao painel de controle </i3></a></li>
+                <li><a href="index.php"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Voltar aos classificados </i3></a></li>
               </ul>
               
               <hr>
@@ -81,21 +66,15 @@
             <div class="col-md-9">
                 <div class="row">
                     <div class="col-md-12">
-                    	<strong><i class="glyphicon glyphicon-th-list"></i> ANÚNCIO </strong>
+                    	<strong><i class="glyphicon glyphicon-th-list"></i> CENTRAL DE CONFIGURAÇÕES DE ANÚNCIOS</strong>
               			<hr>
                         <ol class="breadcrumb">
-                          <li><a href="index.php"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
-                          <?php if(isset($_GET['c']))breadcrumbCategoria($_GET['c']); ?>
-                          <?php if(isset($_GET['s']))breadcrumbSubCategoria($_GET['c'], $_GET['s']); ?>
-                          <?php if(isset($_GET['a']))breadcrumbAnuncio($_GET['a']); ?>
+                          <li><a href="criarAnuncio.php"><i class="glyphicon glyphicon-cog"></i> Painel de anúncios</a></li>                         
                         </ol>
+                
+                                                 
                     </div><!-- /col-md-12 -->
-                </div><!-- /row -->
-                <?php
-					if(isset($_GET['a']))
-					verAnuncio($_GET['a']);
-				?>      
-              
+                </div><!-- /row -->                                  
             </div><!--/col-span-9 -->
         </div><!-- /row -->
     </div><!-- /container -->

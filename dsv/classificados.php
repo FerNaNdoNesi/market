@@ -27,7 +27,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><i class="glyphicon glyphicon-plus"></i> Criar Anúncio</a></li>
+            <li><a href="painel.php?c=1"><i class="glyphicon glyphicon-plus"></i> Criar Anúncio</a></li>
             <li class="dropdown">
               <a class="dropdown-toggle" role="button" data-toggle="dropdown">
                 <i class="glyphicon glyphicon-user"></i> FerNaNdoNesi <span class="caret"></span>
