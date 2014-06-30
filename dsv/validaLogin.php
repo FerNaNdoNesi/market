@@ -1,9 +1,9 @@
 <?php
 	require_once dirname (__FILE__)."/library/library.php";
 	session_start();
-	echo $_POST['inputEmail'];
-	echo $_POST['inputSenha'];
-	echo $_POST['local'];
+	//echo $_POST['inputEmail'];
+	//echo $_POST['inputSenha'];
+	//echo $_POST['local'];
 	
 	
 	if(isset($_POST['inputEmail']) && isset($_POST['inputSenha'])){
