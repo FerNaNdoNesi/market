@@ -7,14 +7,10 @@ $alturaMax  = 2000; // altura em pixels
 $tamanhoMax = 500000; // tamanho em bytes
 $formatos   = "pjpeg|jpeg|png|gif|bmp|x-png|jpg"; // extensoes permitidas
 # Criando as mensagens de erro
-$erro[] = '<div class="alert alert-danger" role="alert">					  
-					  <strong> Tamanho do arquivo maior que o permitido! </strong>['.($tamanhoMax/1000).'] acesse: http://reduzfoto.com.brå
-					</div>';
-
-//"Tamanho do arquivo maior que o permitido [".($tamanhoMax/1000)." kb] http://reduzfoto.com.br.";
+$erro[] = "Tamanho do arquivo maior que o permitido [".($tamanhoMax/1000)." kb] </br> acesse: www.reduzfoto.com.br";
 $erro[] = "A Largura da imagem maior que o permitido.";
 $erro[] = "A Altura da imagem maior que o permitido.";
-$erro[] = "O Arquivo já existe no diretório.";
+$erro[] = "Você atingiu a quantidade maxíma de fotos [3]. Exclua algumas fotos!!";
 $erro[] = "Formato do arquivo não permitido ou inválido.";
 
 if(isset($_FILES["fotos"]))
@@ -37,6 +33,23 @@ if(isset($_FILES["fotos"]))
 			$dimensoes = getimagesize($arquivo["tmp_name"][$key]);
 			$nomefoto  = strtolower($_FILES["fotos"]["name"][$key]);
 			$nomefoto = retira_acentos($nomefoto);
+			$nomefoto = $_SESSION['idUsuario'].'_'.$_GET['f'];
+			
+			// renomeando foto 1
+			if(!file_exists("fotos/".$_SESSION['idUsuario']."/".$_GET['f']."/".$nomefoto."_1.png"))		
+				$nomefoto = $_SESSION['idUsuario'].'_'.$_GET['f'].'_1';
+			
+			// renomeia foto 2
+			if(!file_exists("fotos/".$_SESSION['idUsuario']."/".$_GET['f']."/".$nomefoto."_2.png"))
+			if(file_exists("fotos/".$_SESSION['idUsuario']."/".$_GET['f']."/".$nomefoto."_1.png")){
+				$nomefoto = $_SESSION['idUsuario'].'_'.$_GET['f'].'_2';
+			}
+			
+			// renomeando foto 3
+			if(!file_exists("fotos/".$_SESSION['idUsuario']."/".$_GET['f']."/".$nomefoto."_3.png"))
+			if(file_exists("fotos/".$_SESSION['idUsuario']."/".$_GET['f']."/".$nomefoto."_2.png")){
+				$nomefoto = $_SESSION['idUsuario'].'_'.$_GET['f'].'_3';
+			}
 			#Verificando se a imagem foi enviada
 			if($arquivo["name"][$key] != "")
 			{
@@ -50,37 +63,67 @@ if(isset($_FILES["fotos"]))
 				if($arquivo["size"][$key] > $tamanhoMax)
 				{
 				# Adiciona o erro no array erros[]
-				$erros[] = "[$nomefoto] $erro[0]";
+				$erros[] = 
+				'<div class="alert alert-danger alert-dismissible" role="alert">
+				  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				  <strong>'.$erro[0].'</strong>
+				</div>';
+				//"[$nomefoto] $erro[0]";
 				}
 				# Se a Largura do arquivo é permitida
 				if($dimensoes[0] > $larguraMax)
 				{
-				$erros[] = "[$nomefoto] $erro[1]";
+				$erros[] = 
+				'<div class="alert alert-danger alert-dismissible" role="alert">
+				  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				  <strong>'.$erro[1].'</strong>
+				</div>';
+				//"[$nomefoto] $erro[1]";
 				}
 				# Se a Altura do arquivo é permitida
 				if($dimensoes[1] > $alturaMax)
 				{
-				$erros[] = "[$nomefoto] $erro[2]";
+				$erros[] =
+				'<div class="alert alert-danger alert-dismissible" role="alert">
+				  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				  <strong>'.$erro[2].'</strong>
+				</div>';
+				// "[$nomefoto] $erro[2]";
 				}
-				# Verifica se o arquivo ja existe no diretorio
-				if(file_exists("fotos/$nomefoto"))
+				# Verifica se já foram postadas 3 fotos
+				if(file_exists("fotos/".$_SESSION['idUsuario']."/".$_GET['f']."/".$nomefoto."_1.png"))
+				if(file_exists("fotos/".$_SESSION['idUsuario']."/".$_GET['f']."/".$nomefoto."_2.png"))
+				if(file_exists("fotos/".$_SESSION['idUsuario']."/".$_GET['f']."/".$nomefoto."_3.png"))
 				{
-				$erros[] = "[$nomefoto] $erro[3]";
+				$erros[] = 
+				'<div class="alert alert-danger alert-dismissible" role="alert">
+				  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				  <strong>'.$erro[3].'</strong>
+				</div>';			
+				//"[$nomefoto] $erro[3]";
 				}	
 				# Verifica se extensao é pertida
 				if(!eregi("^image\/($formatos)$", $arquivo["type"][$key]))
 				{
-					$erros[] = "[$nomefoto] $erro[4]".$arquivo["type"][$key];
+					$erros[] = 
+					'<div class="alert alert-danger alert-dismissible" role="alert">
+				  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				  <strong>'.$erro[4].'</strong>
+				</div>';
+				//"[$nomefoto] $erro[4]".$arquivo["type"][$key];
 				}
 				# O array erros nao tiver nenhum indice o upload é permitido/realizado
 				if(!isset($erros))
 				{
-					$imagem_dir = "fotos/".$_SESSION['idUsuario']."/".$_SESSION['idAnuncio']."/".$nomefoto;
+					$imagem_dir = "fotos/".$_SESSION['idUsuario']."/".$_GET['f']."/".$nomefoto.'.png';
 					move_uploaded_file($_FILES["fotos"]["tmp_name"][$key], $imagem_dir);
 					//$sucesso[] = '<h4><p class="bg-success">['.$nomefoto.'] Foto salva com sucesso!!.</p></h4>';//"[$nomefoto] upload com sucesso.";
 					$sucesso[] = '
-					<div class="alert alert-success" role="alert">					  
-					  <strong> Foto encaminhada com sucesso! </strong>['.$nomefoto.']
+					 <div class="alert alert-success alert-dismissible" role="alert">
+					  <button type="button" class="close" data-dismiss="alert">
+					  	<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					  </button>
+					  <strong>Foto salva com sucesso!!</strong>
 					</div>';
 				}
 			}

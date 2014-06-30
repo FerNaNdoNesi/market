@@ -1,6 +1,21 @@
 <?php
 	require_once dirname(__FILE__).'/../ink/database.php';//banco de dados
 	
+	function login($data){
+		$email = $data['email'];
+		$senha = $data['senha'];
+		
+		$sql = "SELECT idUsuario,
+					   nome
+			 	  FROM usuario
+				 WHERE email = '$email'
+				   AND senha = '$senha'";
+		
+		$r = dbConsulta($sql);
+		
+		return $r;
+	}
+	
 	function selectCategoria($id){
 		$sql = "SELECT DISTINCT c.idCategoria, c.tituloCategoria, c.nomeCategoria
 		        FROM categoria  c
@@ -90,7 +105,7 @@
 		return $resultado;
 	}
 	
-	function selectMeusAnuncios($usr){
+	function selectMeusAnuncios($usr, $anu){
 		$sql = "SELECT *, DATE_FORMAT(dtInicioAnuncio,'%d-%b-%Y') as dtAnuncio
 		        FROM anuncio a
 				JOIN statusAnuncio s using(idStatusAnuncio)
@@ -99,7 +114,8 @@
 				JOIN subCategoria sub using(idSubCategoria)
 				JOIN categoria cat using(idCategoria)
 				JOIN usuario usr using(idUsuario)	
-			   WHERE idUsuario = ".$usr."			
+			   WHERE idUsuario = ".$usr."
+			     AND (idAnuncio = ".$anu."	OR 0 = ".$anu.")		
 				ORDER BY a.dtInicioAnuncio DESC";				
 		$resultado = mysql_query($sql);		
 		return $resultado;
@@ -571,24 +587,6 @@
 			$sql = "INSERT INTO servidorCursoCcr (anoSemestre, codCcr, codCurso, siape, alocacao, observacoes, regValido) 
 				VALUES ('$semesterYear', $codCcr, $codCourse, '$siape', $alocation, '$observation', $regValid)";
 		}
-		
-		$r = dbConsulta($sql);
-		
-		return $r;
-	}
-	
-	function login($data){
-		$user = $data['user'];
-		$pass = $data['pass'];
-		
-		$sql = "SELECT nome, 
-		               sobrenome,
-					   nivelServidor.idNivelServidor
-			 	  FROM servidor
-				  JOIN nivelServidor using(idNivelServidor)
-				 WHERE (siape='$user' OR email='$user')
-				   AND senha='$pass'
-				   AND servidor.regValido=1";
 		
 		$r = dbConsulta($sql);
 		

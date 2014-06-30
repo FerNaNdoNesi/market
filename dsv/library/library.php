@@ -1,6 +1,16 @@
 <?php
 	require_once dirname(__FILE__).'/databaseAcess.php';//banco de dados
 	require_once dirname(__FILE__).'/constant.php';//constantes
+	
+	function constroiDadoslogin($email, $senha){
+		$data = array();
+		
+		$data['email'] = addslashes($email);
+		$data['senha'] = addslashes($senha);
+		
+		$r = login($data);
+		return $r;
+	}
 			
 	function listaMenuCategorias($id){
 		$categorias = selectCategoria($id);
@@ -201,23 +211,24 @@
 		}
 	}
 	
-	function listarMeusAnuncios($usr){
-		$anuncio = selectMeusAnuncios($usr);
+	function listarMeusAnuncios($usr, $anu){
+		$anuncio = selectMeusAnuncios($usr, $anu);
 		echo'	<div class="panel-group" id="accordion">';	  					
 		while ($rowAnu = mysql_fetch_array($anuncio)) {	                         
 			echo'    <div class="panel panel-default">';
 			echo'      <div class="panel-heading">';
 			echo'        <h4 class="panel-title">';
-			echo'          <a data-toggle="collapse" data-parent="#accordion" href="#'.$rowAnu['idAnuncio'].'">';
+			echo'          <a data-toggle="collapse" data-parent="#accordion" href="#'.$rowAnu['idAnuncio'].''.$anu.'">';
 			echo'            '.$rowAnu['tituloAnuncio'].' <i class="glyphicon glyphicon-chevron-right"></i>';
 			echo'          </a>';
 			echo'		   <p class="text-right">';
+			echo'		   <a href="painel.php?f='.$rowAnu['idAnuncio'].'"><i class="glyphicon glyphicon-camera"></i> Fotos</a>';
 			echo'		   <a href="#"><i class="glyphicon glyphicon-pencil"></i> Editar</a>';
 			echo'		   <a href="#"><i class="glyphicon glyphicon-trash"></i> Excluir</a>';
 			echo'		   </p>';
 			echo'        </h4>';
 			echo'      </div>';
-			echo'      <div id="'.$rowAnu['idAnuncio'].'" class="panel-collapse collapse">';
+			echo'      <div id="'.$rowAnu['idAnuncio'].''.$anu.'" class="panel-collapse collapse">';
 			echo'        <div class="panel-body">';
 			echo'	 		<div class="row">';
 			echo'	  			<div class="col-md-8">';

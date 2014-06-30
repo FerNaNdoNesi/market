@@ -1,6 +1,11 @@
 <?php
 	require_once dirname (__FILE__)."/library/library.php";
 	session_start();
+	if(isset($_SESSION['logado']) && $_SESSION['logado'] == TRUE){
+		
+	}else{
+		header('Location: entrar.php?l=painel.php');	
+	}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -43,17 +48,25 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="painel.php?c=1"><i class="glyphicon glyphicon-plus"></i> Criar Anúncio</a></li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" role="button" data-toggle="dropdown">
-                <i class="glyphicon glyphicon-user"></i> FerNaNdoNesi <span class="caret"></span>
-              </a>
-              <ul id="g-account-menu" class="dropdown-menu" role="menu">
-                <li><a href="#">Editar perfil</a></li>
-                <li><a href="#">Meus anúncios</a></li>
-                <li><a href="#">Sair</a></li>
-              </ul>
-            </li>
+            <?php 
+			if(isset($_SESSION['logado']) && $_SESSION['logado'] == TRUE){
+				echo'<li><a href="painel.php?c=1"><i class="glyphicon glyphicon-plus"></i> Criar Anúncio</a></li>';
+			}
+			?>
+			<?php 
+			if(isset($_SESSION['logado']) && $_SESSION['logado'] == TRUE){
+				echo'<li class="dropdown">';
+				echo'  <a class="dropdown-toggle" role="button" data-toggle="dropdown">';
+				echo'    <i class="glyphicon glyphicon-user"></i> '.$_SESSION['nome'].' <span class="caret"></span>';
+				echo'  </a>';
+				echo'  <ul id="g-account-menu" class="dropdown-menu" role="menu">';
+				echo'    <li><a href="painel.php">Painel de controle</a></li>';
+				echo'    <li><a href="#">Meus anúncios</a></li>';
+				echo'    <li><a href="sair.php">Sair</a></li>';
+				echo'  </ul>';
+				echo'</li>';
+			}
+			?>
           </ul>
         </div>
       </div><!-- /container -->
@@ -103,9 +116,9 @@
                                 <li class="active"> Meus anúncio</li>                           
                         	</ol> 
                           <?php
-						  	echo'	<div class="panel-group" id="accordion">';
-						  	listarMeusAnuncios(4);
-						  	echo'	</div>';//<!-- /accordion -->  
+						  	//echo'	<div class="panel-group" id="accordion">';							
+						  	listarMeusAnuncios($_SESSION['idUsuario'], 0);
+						  	//echo'	</div>';//<!-- /accordion -->  
 						  ?>                       
                           </div><!-- /listarAnuncios -->
                           
@@ -191,6 +204,7 @@
                           		<li><a href="painel.php"><i class="glyphicon glyphicon-cog"></i> Painel de controle</a></li>
                                 <li class="active"> Editar fotos</li>                           
                         	</ol>
+                            <?php listarMeusAnuncios($_SESSION['idUsuario'], $_GET['f']); ?>
                             <form action="" method="post" enctype="multipart/form-data">
                             <input type="file" name="fotos[]" /></br>
                             <input type="file" name="fotos[]" /></br>
@@ -198,10 +212,8 @@
                             <input type="submit" value="Enviar fotos" />
                             </form>
                             <p>&nbsp;</p>
-                            <!-- 3 Incluindo o programa que faz o upload das imagens -->
-                            <? 
-								$_SESSION['idUsuario'] = 4;
-								$_SESSION['idAnuncio'] = 3;
+                            <!-- 3 Incluindo o programa que faz o upload das imagens -->                            
+                            <? 								
 								include 'upload.php'; 
 							?>  
                           
