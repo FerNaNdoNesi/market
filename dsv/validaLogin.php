@@ -17,7 +17,7 @@
 			header("Location: ".$_POST['local']." "); // dont existing user
 		}
 		else if(mysql_num_rows($r) == 1){
-			$_SESSION['logado'] = TRUE;
+			$_SESSION['acess'] = TRUE;
 			$row = mysql_fetch_array($r);
 			$_SESSION['nome'] = $row['nome'];
 			$_SESSION['idUsuario'] = $row['idUsuario'];			

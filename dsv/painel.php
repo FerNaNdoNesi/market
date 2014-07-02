@@ -1,7 +1,7 @@
 <?php
 	require_once dirname (__FILE__)."/library/library.php";
 	session_start();
-	if(isset($_SESSION['logado']) && $_SESSION['logado'] == TRUE){
+	if(isset($_SESSION['nome']) && isset($_SESSION['acess']) && $_SESSION['acess'] == TRUE){
 		
 	}else{
 		header('Location: entrar.php?l=painel.php');	
@@ -101,7 +101,7 @@
                     	<strong><i class="glyphicon glyphicon-th-list"></i> CENTRAL DE CONFIGURAÇÕES DO USUÁRIO </strong>
               			<hr>                        
                         <div class="tab-content">
-                          <div class="tab-pane <?php if(!isset($_GET['c']) && !isset($_GET['f'])) echo'active';?> " id="resumo">
+                          <div class="tab-pane <?php if(!isset($_GET['c']) && !isset($_GET['f']) && !isset($_GET['l'])) echo'active';?> " id="resumo">
                           	<ol class="breadcrumb">
                           		<li><a href="painel.php"><i class="glyphicon glyphicon-cog"></i> Painel de controle</a></li>
                                 <li class="active"> Resumo</li>                           
@@ -110,7 +110,7 @@
 						  	verResumoUsuario(3);
 						  ?>
                           </div><!-- /resumo -->
-                          <div class="tab-pane" id="listarAnuncios">
+                          <div class="tab-pane <?php if(isset($_GET['l'])) echo'active';?>" id="listarAnuncios">
                           	<ol class="breadcrumb">
                           		<li><a href="painel.php"><i class="glyphicon glyphicon-cog"></i> Painel de controle</a></li>
                                 <li class="active"> Meus anúncio</li>                           
