@@ -11,7 +11,7 @@
 <html lang="pt-br">
 	<head>
 		<meta http-equiv="content-type" content="text/html">
-		<meta charset="iso-8859-1"><!-- charset="iso-8859-1">-->
+		<meta charset="UTF-8"><!-- charset="iso-8859-1">-->
 		<title>Painel de controle</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -50,7 +50,7 @@
           <ul class="nav navbar-nav navbar-right">
             <?php 
 			if(isset($_SESSION['logado']) && $_SESSION['logado'] == TRUE){
-				echo'<li><a href="painel.php?c=1"><i class="glyphicon glyphicon-plus"></i> Criar Anúncio</a></li>';
+				echo'<li><a href="painel.php?c=1"><i class="glyphicon glyphicon-plus"></i> Criar AnÃºncio</a></li>';
 			}
 			?>
 			<?php 
@@ -61,7 +61,7 @@
 				echo'  </a>';
 				echo'  <ul id="g-account-menu" class="dropdown-menu" role="menu">';
 				echo'    <li><a href="painel.php">Painel de controle</a></li>';
-				echo'    <li><a href="#">Meus anúncios</a></li>';
+				echo'    <li><a href="#">Meus anÃºncios</a></li>';
 				echo'    <li><a href="sair.php">Sair</a></li>';
 				echo'  </ul>';
 				echo'</li>';
@@ -84,10 +84,10 @@
               
               <ul class="nav nav-pills2 nav-stacked" role="tablist">
               	<li><a href="#resumo" role="tab" data-toggle="tab"><i2 class="glyphicon glyphicon-star"></i2><i3> Resumo </i3></a></li>
-                <li><a href="#listarAnuncios" role="tab" data-toggle="tab"><i2 class="glyphicon glyphicon-star"></i2><i3> Meus anúncios </i3></a></li>
-                <li><a href="#criarAnuncio" role="tab" data-toggle="tab"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Criar anúncio </i3></a></li>
+                <li><a href="#listarAnuncios" role="tab" data-toggle="tab"><i2 class="glyphicon glyphicon-star"></i2><i3> Meus anÃºncios </i3></a></li>
+                <li><a href="#criarAnuncio" role="tab" data-toggle="tab"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Criar anÃºncio </i3></a></li>
                 <li><a href="#editarPerfil" role="tab" data-toggle="tab"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Editar Perfil </i3></a></li>
-                <li><a href="index.php"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Voltar aos anúncios </i3></a></li>
+                <li><a href="index.php"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Voltar aos anÃºncios </i3></a></li>
               </ul>
               
               <hr>
@@ -98,7 +98,7 @@
             <div class="col-md-9">
                 <div class="row">
                     <div class="col-md-12">
-                    	<strong><i class="glyphicon glyphicon-th-list"></i> CENTRAL DE CONFIGURAÇÕES DO USUÁRIO </strong>
+                    	<strong><i class="glyphicon glyphicon-th-list"></i> CENTRAL DE CONFIGURAÃ‡Ã•ES DO USUÃRIO </strong>
               			<hr>                        
                         <div class="tab-content">
                           <div class="tab-pane <?php if(!isset($_GET['c']) && !isset($_GET['f']) && !isset($_GET['l'])) echo'active';?> " id="resumo">
@@ -113,7 +113,7 @@
                           <div class="tab-pane <?php if(isset($_GET['l'])) echo'active';?>" id="listarAnuncios">
                           	<ol class="breadcrumb">
                           		<li><a href="painel.php"><i class="glyphicon glyphicon-cog"></i> Painel de controle</a></li>
-                                <li class="active"> Meus anúncio</li>                           
+                                <li class="active"> Meus anÃºncio</li>                           
                         	</ol> 
                           <?php
 						  	//echo'	<div class="panel-group" id="accordion">';							
@@ -125,7 +125,7 @@
                           <div class="tab-pane <?php if(isset($_GET['c']) && !isset($_GET['f'])) echo'active';?>" id="criarAnuncio">
                           <ol class="breadcrumb">
                           		<li><a href="painel.php"><i class="glyphicon glyphicon-cog"></i> Painel de controle</a></li>
-                                <li class="active"> Criar anúncio</li>                           
+                                <li class="active"> Criar anÃºncio</li>                           
                         	</ol> 
                           	<!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
@@ -147,17 +147,17 @@
                                   <div class="form-group">
                                     <label for="inputTitulo" class="col-sm-2 control-label">Titulo</label>
                                     <div class="col-sm-10">
-                                      <input type="text" class="form-control" name="inputTitulo" placeholder="Titulo do anúncio">
+                                      <input type="text" class="form-control" name="inputTitulo" placeholder="Titulo do anÃºncio">
                                     </div>
                                   </div>
                                   <div class="form-group">
                                     <label for="inputValor" class="col-sm-2 control-label">Valor</label>
                                     <div class="col-sm-4">
-                                      <input type="text" class="form-control" name="inputValor" placeholder="Valor do anúncio">
+                                      <input type="text" class="form-control" name="inputValor" placeholder="Valor do anÃºncio">
                                     </div>
                                   </div>
                                   <div class="form-group">
-                                    <label for="inputDescricao" class="col-sm-2 control-label">Descrição</label>
+                                    <label for="inputDescricao" class="col-sm-2 control-label">DescriÃ§Ã£o</label>
                                     <div class="col-sm-10">
                                     	<textarea name="inputDescricao" form="form-control">
                                     
@@ -171,14 +171,14 @@
                                      </div>
                                   </div>
                                   <div class="form-group">
-                                     <label for="inputSubCategoria" class="col-sm-2 control-label">Dias anúnciado</label>
+                                     <label for="inputSubCategoria" class="col-sm-2 control-label">Dias anÃºnciado</label>
                                      <div class="col-sm-5">
                                         <?php listarDropMenuDias(); ?>
                                      </div>
                                   </div>
                                   <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                      <button type="submit" class="btn btn-success">Criar anúncio</button>
+                                      <button type="submit" class="btn btn-success">Criar anÃºncio</button>
                                     </div>
                                   </div>
                                 </form>                                                              

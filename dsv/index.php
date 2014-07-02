@@ -1,12 +1,12 @@
 <?php
 	require_once dirname (__FILE__)."/library/library.php";
-	session_start();	
+	session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
 		<meta http-equiv="content-type" content="text/html">
-		<meta charset="iso-8859-1"><!-- charset="iso-8859-1">-->
+		<meta charset="UTF-8"><!-- charset="iso-8859-1">-->
 		<title>Mercado Laranjeiras</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -29,9 +29,9 @@
           <ul class="nav navbar-nav navbar-right">
           	<?php 
 			if(isset($_SESSION['nome']) && isset($_SESSION['acess']) && $_SESSION['acess'] == TRUE){
-				echo'<li><a href="painel.php?c=1"><i class="glyphicon glyphicon-plus"></i> Criar Anúncio</a></li>';
+				echo'<li><a href="painel.php?c=1"><i class="glyphicon glyphicon-plus"></i> Criar AnÃºncio</a></li>';
 			}else{
-				echo'<li><a href="" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="glyphicon glyphicon-plus"></i> Criar Anúncio</a></li>';
+				echo'<li><a href="" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="glyphicon glyphicon-plus"></i> Criar AnÃºncio</a></li>';
 			}
 			?>
 			<?php 
@@ -42,7 +42,7 @@
 				echo'  </a>';
 				echo'  <ul id="g-account-menu" class="dropdown-menu" role="menu">';
 				echo'    <li><a href="painel.php">Painel de controle</a></li>';
-				echo'    <li><a href="painel.php?l=1">Meus anúncios</a></li>';
+				echo'    <li><a href="painel.php?l=1">Meus anÃºncios</a></li>';
 				echo'    <li><a href="sair.php">Sair</a></li>';
 				echo'  </ul>';
 				echo'</li>';
@@ -71,30 +71,30 @@
                    
               <hr>
               
-              <strong><i class="glyphicon glyphicon-sort-by-attributes"></i> VER ANÚNCIOS:</strong>  
+              <strong><i class="glyphicon glyphicon-sort-by-attributes"></i> VER ANÃšNCIOS:</strong>  
               
               <hr>
               
               <ul class="nav nav-pills nav-stacked">
                 <li><a href="#"><i2 class="glyphicon glyphicon-star"></i2><i3> Mais visitados </i3></a></li>
-                <li><a href="#"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Melhores anúncios </i3></a></li>
+                <li><a href="#"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Melhores anÃºncios </i3></a></li>
                 <li><a href="#"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Eventos </i3></a></li>
-                <li><a href="#"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> Promoções </i3></a></li>
+                <li><a href="#"><i2 class="glyphicon glyphicon-star-empty"></i2><i3> PromoÃ§Ãµes </i3></a></li>
               </ul>
               
               <hr>
               
-              <strong><i class="glyphicon glyphicon-user"></i> ÁREA DO USUÁRIO:</strong>  
+              <strong><i class="glyphicon glyphicon-user"></i> ÃREA DO USUÃRIO:</strong>  
               
               <hr>
               
               <ul class="nav nav-pills nav-stacked">              	
               <?php
               if(isset($_SESSION['nome']) && isset($_SESSION['acess']) && $_SESSION['acess'] == TRUE){
-				echo'<li><a href="painel.php?c=1"><i class="glyphicon glyphicon-plus"></i><i3> Criar anúncio </i3></a></li>';
+				echo'<li><a href="painel.php?c=1"><i class="glyphicon glyphicon-plus"></i><i3> Criar anÃºncio </i3></a></li>';
 				}else{
 					echo'<li><a href="" data-toggle="modal" data-target=".bs-example-modal-lg">';
-                	echo'	<i class="glyphicon glyphicon-plus"></i><i3> Criar anúncio </i3></a>';
+                	echo'	<i class="glyphicon glyphicon-plus"></i><i3> Criar anÃºncio </i3></a>';
                 	echo'</li>';
 				}
 				?>
@@ -106,7 +106,7 @@
 					echo'  </a>';
 					echo'  <ul id="g-account-menu" class="dropdown-menu" role="menu">';
 					echo'    <li><a href="painel.php">Painel de controle</a></li>';
-					echo'    <li><a href="painel.php?l=1">Meus anúncios</a></li>';
+					echo'    <li><a href="painel.php?l=1">Meus anÃºncios</a></li>';
 					echo'    <li><a href="sair.php">Sair</a></li>';
 					echo'  </ul>';
 					echo'</li>';
@@ -128,7 +128,7 @@
             <div class="col-md-9">
                 <div class="row">
                     <div class="col-md-6">
-                        <strong><i class="glyphicon glyphicon-usd"></i> PROMOÇÕES </strong>
+                        <strong><i class="glyphicon glyphicon-usd"></i> PROMOÃ‡Ã•ES </strong>
                         <hr>
                         <?php 
 						for($i = 0; $i<1; $i++){
@@ -143,7 +143,7 @@
 							echo"</div>";
 						}
 						?>
-                    </div><!-- /col-md-6 PROMOï¿½?ES -->
+                    </div><!-- /col-md-6 PROMOÃ¯Â¿Å“?ES -->
                     <div class="col-md-6">
                         <strong><i class="glyphicon glyphicon-glass"></i> EVENTOS </strong>  
                         <hr>
@@ -269,7 +269,7 @@
               <div class="form-group">
                 <label for="inputCadastro" class="col-sm-4 control-label"></label>
                 <div class="col-sm-5">
-                  <i3><strong>Não tem cadastro? </strong></i3><i3><a href="cadastrar.php"> Cadastre-se agora mesmo! É grátis!</a></i3>
+                  <i3><strong>NÃ£o tem cadastro? </strong></i3><i3><a href="cadastrar.php"> Cadastre-se agora mesmo! Ã‰ grÃ¡tis!</a></i3>
                 </div>
               </div>
             </form>
