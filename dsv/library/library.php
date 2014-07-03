@@ -145,7 +145,7 @@
 			echo'		<div class="jumbotron col-md-12">';
 			echo'  			<p><h4> <i3>Valor: '.$rowAnu['valorAnuncio'].'</i3></h4></p>';
 			echo'  			<p><h4><i class="glyphicon glyphicon-shopping-cart"></i> <i3>Produto: '.$rowAnu['descricaoTipoProduto'].'</i3></h4></p><hr>';
-			echo'  			<p><h4><i3>CONTATO DO AN⁄NCIANTE:</i3></h4></p>';
+			echo'  			<p><h4><i3>CONTATO DO AN√öNCIANTE:</i3></h4></p>';
 			echo'  			<p><h4><i class="glyphicon glyphicon-user"></i> <i3> '.$rowAnu['nome'].'</i3></h4></p>';
 			echo'  			<p><h4><i class="glyphicon glyphicon-envelope"></i> <i3> '.$rowAnu['email'].'</i3></h4></p>';
 			echo'  			<p><h4><i class="glyphicon glyphicon-earphone"></i> <i3> '.$rowAnu['telefone'].'</i3></h4></p>';
@@ -166,7 +166,7 @@
 		while ($rowUsu = mysql_fetch_array($usuario)) {			  			
 			echo'	<div class="jumbotron col-md-12">';
 			echo'     <div class="col-md-6 text-right">';
-			echo'  		<p><h4><i class="glyphicon glyphicon-user"></i><i3> Usu·rio: </i3></h4></p>';
+			echo'  		<p><h4><i class="glyphicon glyphicon-user"></i><i3> Usu√°rio: </i3></h4></p>';
 			echo'	  </div>';
 			echo'     <div class="col-md-6">';
 			echo' 		<p><h4><i3>'.$rowUsu['nome'].'</i3></h4></p>';
@@ -184,25 +184,25 @@
 			echo' 		<p><h4><i3>'.$rowUsu['telefone'].'</i3></h4></p>';
 			echo'	  </div>';
 			echo'     <div class="col-md-6 text-right">';
-			echo'  		<p><h4><i class="glyphicon glyphicon-stats"></i><i3> Status usu·rio: </i3></h4></p>';
+			echo'  		<p><h4><i class="glyphicon glyphicon-stats"></i><i3> Status usu√°rio: </i3></h4></p>';
 			echo'	  </div>';
 			echo'     <div class="col-md-6">';
 			echo' 		<p><h4><i3>'.$rowUsu['descricaoStatusUsuario'].'</i3></h4></p>';
 			echo'	  </div>';
 			echo'     <div class="col-md-6 text-right">';
-			echo'  		<p><h4><i class="glyphicon glyphicon-copyright-mark"></i><i3> NÌvel usu·rio: </i3></h4></p>';
+			echo'  		<p><h4><i class="glyphicon glyphicon-copyright-mark"></i><i3> N√≠vel usu√°rio: </i3></h4></p>';
 			echo'	  </div>';
 			echo'     <div class="col-md-6">';
 			echo' 		<p><h4><i3><i2><i class="glyphicon glyphicon-copyright-mark"></i></i2> '.$rowUsu['descricaoNivelUsuario'].'</i3></h4></p>';
 			echo'	  </div>';
 			echo'     <div class="col-md-6 text-right">';
-			echo'  		<p><h4><i class="glyphicon glyphicon-calendar"></i><i3> An˙nciante desde: </i3></h4></p>';
+			echo'  		<p><h4><i class="glyphicon glyphicon-calendar"></i><i3> An√∫nciante desde: </i3></h4></p>';
 			echo'	  </div>';
 			echo'     <div class="col-md-6">';
 			echo' 		<p><h4><i3>'.$rowUsu['usuarioDesde'].'</i3></h4></p>';
 			echo'	  </div>';		
 			echo'     <div class="col-md-6 text-right">';
-			echo'  		<p><h4><i class="glyphicon glyphicon-bullhorn"></i><i3> An˙ncios ativos: </i3></h4></p>';
+			echo'  		<p><h4><i class="glyphicon glyphicon-bullhorn"></i><i3> An√∫ncios ativos: </i3></h4></p>';
 			echo'	  </div>';
 			echo'     <div class="col-md-6">';
 			echo' 		<p><h4><i3><kbd>0'.$rowUsu['qtdAnuncios'].'</kbd></i3></h4></p>';
@@ -286,18 +286,18 @@
 			}
 		}
 		
-		$id = $id + 1;//incrementa em 1 para n„o duplicar a chave primaria
+		$id = $id + 1;//incrementa em 1 para n√£o duplicar a chave primaria
 		
 		$data = array();//inicializa um vetor de dados
-		$data['id'] = $id;//na posiÁ„o 'id', È passado o atual valor de 'id'
-		$data['function'] = addslashes($function);//na posiÁ„o 'function', È passado a string protegida de dados maliciosos para o banco de dados
-		$data['regValid'] = 1;//na posiÁ„o 'regValid', È passado o valor 1 como padr„o, significando que o dado primeiramente È valido
+		$data['id'] = $id;//na posi√ß√£o 'id', √© passado o atual valor de 'id'
+		$data['function'] = addslashes($function);//na posi√ß√£o 'function', √© passado a string protegida de dados maliciosos para o banco de dados
+		$data['regValid'] = 1;//na posi√ß√£o 'regValid', √© passado o valor 1 como padr√£o, significando que o dado primeiramente √© valido
 		
 		/**
-		* Por padr„o colocamos o prefixo que vai nos dizer o que a funÁ„o faz (insert, update, select, delete)
+		* Por padr√£o colocamos o prefixo que vai nos dizer o que a fun√ß√£o faz (insert, update, select, delete)
 		* e depois o nome da tabela (funcao, cargo, nivelServidor, cursos, etc).
 		**/
-		$r = insertFuncao($data);//r possui o retorno da funÁ„o 'insertFuncao'
+		$r = insertFuncao($data);//r possui o retorno da fun√ß√£o 'insertFuncao'
 		return $r;
 	}
 	/*function chamaCadastroFuncao($funcao){
@@ -628,7 +628,7 @@
 		buildDataInsertCcrs(rand()%999, 'Estrutura de Dados I', 40, 1);
 		buildDataInsertCursosCcrs(rand()%999, rand()%999);
 		buildDataInsertDiaSemana(rand()%999, rand()%999, 'Semana', 'Dia');
-		//buildDataInsertPeriodos(rand()%999, rand()%999, 'Periodo', '1999-12-15 15:13:15', '1999-12-15 15:13:15'); VERIFICAR INSER«√O DE HORAS SEM DIA
+		//buildDataInsertPeriodos(rand()%999, rand()%999, 'Periodo', '1999-12-15 15:13:15', '1999-12-15 15:13:15'); VERIFICAR INSER√á√ÉO DE HORAS SEM DIA
 		buildDataInsertPeriodos(rand()%999, rand()%999, 'Periodo', NULL, NULL);
 		//buildDataInsertHorarios(rand()%999, rand()%999, rand()%999, rand()%999); PROBLEMA, ENCONTRAR O ERRO E RESOLVER
 		buildDataInsertSalas('1', rand()%999, 'Descricao da Sala');
@@ -639,14 +639,14 @@
 	
 	function geraSenha($tamanho, $maiusculas, $numeros, $simbolos){
 		/**
-		* FunÁ„o para gerar senhas aleatÛrias
+		* Fun√ß√£o para gerar senhas aleat√≥rias
 		*
 		* @author    Thiago Belem <contato@thiagobelem.net>
 		*
 		* @param integer $tamanho Tamanho da senha a ser gerada
-		* @param boolean $maiusculas Se ter· letras mai˙sculas
-		* @param boolean $numeros Se ter· n˙meros
-		* @param boolean $simbolos Se ter· sÌmbolos
+		* @param boolean $maiusculas Se ter√° letras mai√∫sculas
+		* @param boolean $numeros Se ter√° n√∫meros
+		* @param boolean $simbolos Se ter√° s√≠mbolos
 		*
 		* @return string A senha gerada
 		*/
