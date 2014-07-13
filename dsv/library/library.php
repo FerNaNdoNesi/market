@@ -30,7 +30,7 @@
 						echo'   	<li>';
 						echo'			<a href="classificados.php?c='.$rowSub['idCategoria'].'&s='.$rowSub['idSubCategoria'].'">';
 						echo'			'.$rowSub['tituloSubCategoria'].'';
-						echo'			<span class="badge badge-info">'.$rowSub['idSubCategoria'].'</span></a>';
+						echo'			<span class="badge badge-info">'.$rowSub['qtAnuncios'].'</span></a>';
 						echo'		</li>';
 					}
 				}
@@ -248,7 +248,7 @@
 	
 	function listarDropMenuCategorias(){
 		$subCategoria = selectSubCategoria(0, 0);
-		echo'	<select name="inputSubCategoria">';	  					
+		echo'	<select class="form-control" name="inputSubCategoria">';	  					
 		while ($rowSub = mysql_fetch_array($subCategoria)) {	
 		echo'	<option value="'.$rowSub['idSubCategoria'].'">'.$rowSub['tituloCategoria'].' -- '.$rowSub['tituloSubCategoria'].'</option>';                               
 		}
@@ -258,7 +258,7 @@
 	
 	function listarDropMenuTipoProduto(){
 		$tipoProduto = selectTipoProduto(0);
-		echo'	<select name="inputTipoProduto">';	  					
+		echo'	<select class="form-control" name="inputTipoProduto">';	  					
 		while ($rowTp = mysql_fetch_array($tipoProduto)) {	
 		echo'	<option value="'.$rowTp['idTipoProduto'].'">'.$rowTp['descricaoTipoProduto'].'</option>';                               
 		}
@@ -267,10 +267,10 @@
 	}
 	
 	function listarDropMenuDias(){		
-		echo'	<select name="inputDias">';	  				
+		echo'	<select class="form-control" name="inputDias">';	  				
 		echo'	<option value="30"> 30 Dias</option>';
-		echo'	<option value="30"> 60 Dias</option>';
-		echo'	<option value="30"> 90 Dias</option>';                               
+		echo'	<option value="60"> 60 Dias</option>';
+		echo'	<option value="90"> 90 Dias</option>';                               
 		echo'	</select>';
 		
 	}

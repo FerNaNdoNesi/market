@@ -13,8 +13,9 @@
 		$r=constroiDadosLogin($email, $senha);
 		
 		if(mysql_num_rows($r) == 0){
-			$_SESSION['error'] = 5;
-			header("Location: ".$_POST['local']." "); // dont existing user
+			//$_SESSION['error'] = 5;
+			header("Location: entrar.php?e=5"); 
+			//header("Location: entrar.php?e=5&l=".$_POST['local']." "); // dont existing user
 		}
 		else if(mysql_num_rows($r) == 1){
 			$_SESSION['acess'] = TRUE;

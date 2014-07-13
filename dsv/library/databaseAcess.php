@@ -17,21 +17,26 @@
 	}
 	
 	function selectCategoria($id){
-		$sql = "SELECT DISTINCT c.idCategoria, c.tituloCategoria, c.nomeCategoria
+		$sql = "SELECT c.idCategoria, c.tituloCategoria, c.nomeCategoria, count(a.idAnuncio) as qtAnuncios
 		        FROM categoria  c
-				WHERE (c.idCategoria = ".$id." OR ".$id." = 0)
-				order by c.tituloCategoria";				
+		   LEFT JOIN subCategoria s using(idCategoria)
+		   LEFT JOIN anuncio a using(idSubCategoria)	
+			   WHERE (c.idCategoria = ".$id." OR ".$id." = 0)
+			GROUP BY c.idCategoria, c.tituloCategoria, c.nomeCategoria
+			ORDER BY c.tituloCategoria";				
 		$resultado = mysql_query($sql);		
 		return $resultado;
 	}	
 	
 	function selectSubCategoria($id, $id2){
-		$sql = "SELECT DISTINCT c.idCategoria, s.idSubCategoria, c.tituloCategoria, s.tituloSubCategoria
+		$sql = "SELECT c.idCategoria, s.idSubCategoria, c.tituloCategoria, s.tituloSubCategoria, count(a.idAnuncio) as qtAnuncios
 		        FROM categoria  c
-				JOIN subCategoria s using(idCategoria)
-				WHERE (c.idCategoria = ".$id." OR ".$id." = 0)
-				AND (s.idSubCategoria = ".$id2." OR ".$id2." = 0)
-				ORDER BY c.tituloCategoria, s.tituloSubCategoria";				
+		   LEFT JOIN subCategoria s using(idCategoria)
+		   LEFT JOIN anuncio a using(idSubCategoria)
+			   WHERE (c.idCategoria = ".$id." OR ".$id." = 0)
+			  	 AND (s.idSubCategoria = ".$id2." OR ".$id2." = 0)
+		    GROUP BY c.idCategoria, s.idSubCategoria, c.tituloCategoria, s.tituloSubCategoria
+			ORDER BY c.tituloCategoria, s.tituloSubCategoria";				
 		$resultado = mysql_query($sql);		
 		return $resultado;
 	}

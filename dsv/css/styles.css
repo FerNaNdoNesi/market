@@ -155,7 +155,7 @@ i3{
 	background-color:#0C9;
 }
 
-.navbar-fixed-top{
+.navbar-fixed-top2{
 	-webkit-border-top-left-radius: 5px;
 	-moz-border-top-left-radius: 5px;
 	-ms-border-top-left-radius: 5px;
@@ -167,4 +167,15 @@ i3{
 	-ms-border-top-right-radius: 5px;
 	-o-border-top-right-radius: 5px;
 	border-top-right-radius: 5px;
+}
+
+/*Baner de Bem-Vindo*/
+.upa{
+	/*background-image: linear-gradient(to bottom, #FFFFFF, #999);*/
+	background-image: linear-gradient(to bottom, #efefef, #efefef);
+	color:#333;
+			
+	box-shadow: 10px -1px 25px #666;
+	-webkit-box-shadow: 10px -1px 25px #666;
+	-moz-box-shadow: 10px -1px 25px #666;
 }

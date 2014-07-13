@@ -30,11 +30,11 @@
             </div></br></br></br>
         
         	<form action="validaLogin.php" class="form-horizontal" role="form" method="post">
-            <input type="hidden" name="local" value="
+            <input type="hidden" name="local" value="painel.php">
 			<?php 
-			if(isset($_GET['l']))echo $_GET['l'];
-			else echo'index.php';			
-			?>">
+			//if(isset($_GET['l']))echo''.$_GET['l'];
+			//else echo'index.php';			
+			?>
               <div class="form-group">
                 <label for="inputEmail3" class="col-sm-4 control-label"><i3>Email</i3></label>
                 <div class="col-sm-5">
@@ -60,13 +60,19 @@
                 <div class="col-sm-offset-4 col-sm-10">
                   <i3><button type="submit" class="btn btn-success">Continuar..</button></i3>
                 </div>
-              </div>
-              <div class="form-group">
-                <label for="inputCadastro" class="col-sm-4 control-label"></label>
-                <div class="col-sm-5">
-                  <i3><strong>Não tem cadastro? </strong></i3><i3><a href="cadastrar.php"> Cadastre-se agora mesmo! É grátis!</a></i3>
-                </div>
-              </div>
+              </div>              
+                <?php
+					if(isset($_GET['e']) && $_GET['e'] == 5){
+						echo' <div class="col-sm-12">';
+						echo' <div class="alert alert-danger alert-dismissible text-center" role="alert">
+  							  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
+							  <span class="sr-only">Close</span></button>
+  							  <strong>ERRO!</strong> Usuário ou senha inválidos.
+							  </div>';
+						  
+						echo' </div>';
+					}
+				?>
             </form>
             <!-- Rodape -->
             <footer class="text-center">

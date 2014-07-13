@@ -226,7 +226,7 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
         
-            <div id="top-nav" class="navbar navbar-inverse navbar-fixed-top">
+            <div id="top-nav" class="navbar navbar-inverse navbar-fixed-top navbar-fixed-top2">
               <div class="container">
                 <div class="navbar-header">
                   <a class="navbar-brand" href="index.php">
@@ -270,7 +270,7 @@
                 <label for="inputCadastro" class="col-sm-4 control-label"></label>
                 <div class="col-sm-5">
                   <i3><strong>Não tem cadastro? </strong></i3><i3><a href="cadastrar.php"> Cadastre-se agora mesmo! É grátis!</a></i3>
-                </div>
+                </div>                
               </div>
             </form>
             <!-- Rodape -->

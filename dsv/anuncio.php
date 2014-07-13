@@ -171,7 +171,7 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
         
-            <div id="top-nav" class="navbar navbar-inverse navbar-fixed-top">
+            <div id="top-nav" class="navbar navbar-inverse navbar-fixed-top navbar-fixed-top2">
               <div class="container">
                 <div class="navbar-header">
                   <a class="navbar-brand" href="index.php">

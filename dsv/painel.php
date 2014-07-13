@@ -4,7 +4,7 @@
 	if(isset($_SESSION['nome']) && isset($_SESSION['acess']) && $_SESSION['acess'] == TRUE){
 		
 	}else{
-		header('Location: entrar.php?l=painel.php');	
+		header('Location: entrar.php?e=5');	
 	}
 ?>
 <!DOCTYPE html>
@@ -49,22 +49,26 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <?php 
-			if(isset($_SESSION['logado']) && $_SESSION['logado'] == TRUE){
+			if(isset($_SESSION['nome']) && isset($_SESSION['acess']) && $_SESSION['acess'] == TRUE){
 				echo'<li><a href="painel.php?c=1"><i class="glyphicon glyphicon-plus"></i> Criar Anúncio</a></li>';
+			}else{
+				echo'<li><a href="" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="glyphicon glyphicon-plus"></i> Criar Anúncio</a></li>';
 			}
 			?>
 			<?php 
-			if(isset($_SESSION['logado']) && $_SESSION['logado'] == TRUE){
+			if(isset($_SESSION['nome']) && isset($_SESSION['acess']) && $_SESSION['acess'] == TRUE){
 				echo'<li class="dropdown">';
 				echo'  <a class="dropdown-toggle" role="button" data-toggle="dropdown">';
 				echo'    <i class="glyphicon glyphicon-user"></i> '.$_SESSION['nome'].' <span class="caret"></span>';
 				echo'  </a>';
 				echo'  <ul id="g-account-menu" class="dropdown-menu" role="menu">';
 				echo'    <li><a href="painel.php">Painel de controle</a></li>';
-				echo'    <li><a href="#">Meus anúncios</a></li>';
+				echo'    <li><a href="painel.php?l=1">Meus anúncios</a></li>';
 				echo'    <li><a href="sair.php">Sair</a></li>';
 				echo'  </ul>';
 				echo'</li>';
+			}else{
+				echo'<li><a href="" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="glyphicon glyphicon-log-in"></i> Entrar</a></li>';
 			}
 			?>
           </ul>
@@ -107,7 +111,7 @@
                                 <li class="active"> Resumo</li>                           
                         	</ol>                          
                           <?php
-						  	verResumoUsuario(3);
+						  	verResumoUsuario($_SESSION['idUsuario']);
 						  ?>
                           </div><!-- /resumo -->
                           <div class="tab-pane <?php if(isset($_GET['l'])) echo'active';?>" id="listarAnuncios">
@@ -166,13 +170,13 @@
                                   </div>
                                   <div class="form-group">
                                      <label for="inputSubCategoria" class="col-sm-2 control-label">Tipo produto</label>
-                                     <div class="col-sm-5">
+                                     <div class="col-sm-3">
                                         <?php listarDropMenuTipoProduto(); ?>
                                      </div>
                                   </div>
                                   <div class="form-group">
                                      <label for="inputSubCategoria" class="col-sm-2 control-label">Dias anúnciado</label>
-                                     <div class="col-sm-5">
+                                     <div class="col-sm-3">
                                         <?php listarDropMenuDias(); ?>
                                      </div>
                                   </div>
